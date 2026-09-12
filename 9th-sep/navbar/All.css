@@ -1,0 +1,3602 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root {
+    --orange: #ff5126;
+    --dark: #3d424c;
+    --top-bg: #f4f7fa;
+    --blue: #078be4;
+    --lime: #7cff16;
+    --green: #16851d;
+  }
+
+  * {
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+    /* border: 1px solid black; */
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #fff;
+    color: #000;
+  }
+
+ #abhay-gmail{
+  display: none;
+ }
+
+  img {
+    /* border-radius: 11px; */
+    max-width: 100%;
+  }
+  .abhay-phone {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    border: 0;
+    /* font: inherit; */
+    cursor: pointer;
+  }
+
+  .abhay-site-header {
+    width: 100%;
+    min-width: 0;
+    border-bottom: 1px solid #aab8c4;
+    background: #fff;
+  }
+
+  .abhay-top-row {
+    position: relative;
+    font-family: 'Roboto', Arial, sans-serif;
+    height: 54px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0 13px 0 35px;
+    background: var(--top-bg);
+  }
+
+  .abhay-brand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    width: 149px;
+    height: 118px;
+    flex: 0 0 166px;background-color: var(--top-bg);
+  }
+
+  .abhay-brand-logo {
+    
+    width: 166px;
+    height: 86px;
+    display: block;
+    object-fit: contain;
+    object-position: left top;
+  }
+
+  .abhay-rank {
+    max-width: 192px;
+    flex: 0 1 510px;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding-top: 14px;
+    margin-left: 141px;
+  }
+
+  .abhay-rank strong {
+    color: var(--orange);
+    font-size: 36px;
+    line-height: 31px;
+    font-weight: 900;
+  }
+
+ .abhay-rank span {
+    color: #15191f;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 900;
+}
+
+  .abhay-contact-bar {
+    height: 37px;
+    gap: 7px;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #000;
+    font-size: clamp(12px, .86vw, 18px);
+    line-height: 18px;
+    font-weight: 900;
+  }
+
+  .abhay-sep {
+    width: 3px;
+    height: 12px;
+    flex: 0 0 2px;
+    background: var(--orange);
+}
+
+  .abhay-whatsapp {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .abhay-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .abhay-nav-row {
+    height: 64px;
+    display: grid;
+    grid-template-columns: 408px 1fr;
+    align-items: start;
+    padding: 16px 27px 0 255px;
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .abhay-category-wrap {
+    position: relative;
+    width: 145px;
+  }
+
+  .abhay-category-wrap::after {
+    content: "";
+    position: absolute;
+    top: 51px;
+    left: 0;
+    width: 300px;
+    /* height: 8px; */
+  }
+
+.abhay-category-btn {
+    width: 151px;
+    height: 38px;
+    border-radius: 4px;
+    background: var(--orange);
+    color: #fff;
+    margin-left: -70px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: -4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+}
+
+.abhay-category-menu {
+    position: absolute;
+    top: 35px;
+    left: -71px;
+    z-index: 20;
+    width: 314px;
+    display: none;
+    padding: 0;
+    border-radius: 4px;
+    background: transparent;
+}
+  .abhay-category-menu.abhay-is-open {
+    display: block;
+  }
+
+  .abhay-category-menu a {
+    width: 314px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+    transition: filter 160ms ease, transform 160ms ease;
+  }
+
+  .abhay-category-menu a:hover {
+    color: #fff;
+    filter: brightness(.96);
+    transform: translateY(-1px);
+  }
+
+  .abhay-menu-item {
+    position: relative;
+    width: 314px;
+  }
+
+  .abhay-menu-item:hover {
+    z-index: 30;
+  }
+
+  .abhay-has-submenu::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 300px;
+    z-index: 21;
+    width: 22px;
+    height: calc(100% + 8px);
+  }
+
+.abhay-submenu {
+    position: absolute;
+    top: -1px;
+    left: 318px;
+    z-index: 24;
+    width: 518px;
+    display: none;
+    width: fit-content;
+}
+
+  .abhay-submenu::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -8px;
+    width: 8px;
+    height: calc(100% + 8px);
+  }
+  .abhay-has-submenu.abhay-is-submenu-open .abhay-submenu,
+  .abhay-submenu:hover {
+    display: block;
+  }
+
+  /* .abhay-submenu a {
+    width: 518px;
+  } */
+
+  .abhay-category-menu a.abhay-is-selected,
+  .abhay-submenu a.abhay-is-selected {
+    background: #e94115;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .36), inset 0 0 0 2px rgba(255, 255, 255, .2);
+  }
+
+  .abhay-primary-nav {
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: clamp(5px, 2.35vw, 14px);
+    /* padding-top: 7px; */
+    color: #000;
+    font-size: 15px;
+    gap: clamp(28px, 2.35vw, 23px);
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .abhay-primary-nav a {
+    position: relative;
+    line-height: 24px;
+  }
+
+  .abhay-primary-nav a:hover {
+    color: var(--orange);
+  }
+
+  .abhay-career-link {
+    color: #0078b6;
+  }
+
+  .abhay-ai-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 13px;
+    border-radius: 18px;
+    color: #fff;
+    background: #ff6133;
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 900;
+  }
+
+  .abhay-ai-badge::before {
+    content: "\2742";
+    margin-right: 4px;
+    font-size: 13px;
+  }
+
+  .abhay-fee-pay-btn {
+    top: -5px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 7px;
+    border-radius: 4px;
+    color: #fff;
+    background: linear-gradient(#1d9728, #116f18);
+  }
+
+  .abhay-launch-strip {
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 37px;
+    padding: 7px 18px;
+    background: var(--orange);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .abhay-header-pill {
+    height: 29px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 3px;
+    border-radius: 7px;
+    color: #000;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, .35);
+  }
+
+  .abhay-green-pill {
+    min-width: 168px;
+    color: #fff;
+    background: linear-gradient(90deg, #2a9879, #28bd7a);
+    font-weight: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .35), inset 0 1px 2px rgba(255, 255, 255, .25);
+  }
+
+  .abhay-blue-pill {
+    min-width: 185px;
+    color: #fff;
+    background: var(--blue);
+    font-weight: 900;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+  }
+
+  .abhay-lime-pill {
+    min-width: 164px;
+    background: var(--lime);
+    border: 2px solid #ffe964;
+  }
+
+  .abhay-mini-icon {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  .abhay-megaphone {
+    width: 16px;
+    height: 11px;
+    border-radius: 2px 8px 8px 2px;
+    background: #ffd766;
+    transform: rotate(-26deg);
+  }
+  .abhay-support{
+    display: none;
+  }
+
+  .abhay-megaphone::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 3px;
+    width: 7px;
+    height: 5px;
+    border-radius: 2px;
+    background: #fff;
+  }
+
+  .abhay-briefcase {
+    width: 16px;
+    height: 13px;
+    border-radius: 2px;
+    background: #895225;
+  }
+
+  .abhay-briefcase::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: -4px;
+    width: 6px;
+    height: 5px;
+    border: 2px solid #895225;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .abhay-briefcase::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, .22);
+  }
+
+  .abhay-hero-section {
+    position: relative;
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(430px, .86fr);
+    align-items: center;
+    gap: 42px;
+    overflow: hidden;
+    padding: 52px 48px 46px;
+    border-bottom: 1px solid #e7edf2;
+    background: #f4f8fc;
+  }
+
+  .abhay-hero-section::before {
+    display: none;
+  }
+
+  .abhay-hero-content,
+  .abhay-hero-visual {
+    position: relative;
+    z-index: 1;
+  }
+
+  .abhay-hero-content h1 {
+    margin: 0;
+    color: #101723;
+    font-size: clamp(34px, 2.35vw, 48px);
+    line-height: 1.18;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .abhay-hero-content h1 span,
+  .abhay-hero-content h2 span,
+  .abhay-hero-kicker {
+    color: var(--orange);
+  }
+
+  .abhay-hero-content h2 {
+    max-width: 870px;
+    margin: 24px 0 0;
+    color: #111925;
+    font-size: clamp(24px, 1.72vw, 34px);
+    line-height: 1.25;
+    font-weight: 900;
+  }
+
+  .abhay-hero-copy {
+    max-width: 900px;
+    margin: 14px 0 0;
+    color: #4d5661;
+    font-size: clamp(18px, 1.2vw, 24px);
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .abhay-hero-kicker {
+    margin: 24px 0 0;
+    font-size: clamp(18px, 1.1vw, 22px);
+    line-height: 1.3;
+    font-weight: 900;
+  }
+
+  .abhay-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(14px, 1.3vw, 24px);
+    margin-top: 12px;
+  }
+
+  .abhay-hero-primary {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 263px;
+    min-height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border-radius: 5px;
+    color: #fff;
+    background: var(--orange);
+    font-size: clamp(15px, 1.05vw, 20px);
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 12px 12px 0 rgba(228, 223, 223, .55);
+  }
+
+  .abhay-hero-primary:first-child::before {
+    content: "\2192";
+    margin-right: 7px;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .abhay-trusted-row {
+    margin-top: 54px;
+  }
+
+  .abhay-trusted-row > strong {
+    display: block;
+    margin-bottom: 26px;
+    color: #101723;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .abhay-trusted-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(22px, 2.3vw, 44px);
+  }
+
+  .abhay-trusted-logos span {
+    font-size: clamp(16px, 1.15vw, 24px);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #627080;
+  }
+
+  .abhay-trusted-logos span:nth-child(2) {
+    color: #21a8e8;
+  }
+
+  .abhay-trusted-logos span:nth-child(3),
+  .abhay-trusted-logos span:nth-child(5),
+  .abhay-trusted-logos span:nth-child(7) {
+    color: #e3222b;
+  }
+
+  .abhay-trusted-logos span:nth-child(4) {
+    color: #ff6a2a;
+  }
+
+  .abhay-trusted-logos span:nth-child(6) {
+    color: #d71920;
+  }
+
+  .abhay-trusted-logos span:nth-child(8) {
+    color: #202733;
+  }
+
+  .abhay-hero-visual {
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+  }
+
+  .abhay-orbit-graphic {
+    position: relative;
+    width: min(520px, 36vw);
+    aspect-ratio: 1;
+  }
+
+  .abhay-orbit {
+    position: absolute;
+    border: 5px solid var(--orange);
+    border-radius: 50%;
+    inset: 0;
+  }
+
+  .abhay-orbit-inner {
+    inset: 12.5%;
+  }
+
+  .abhay-laptop-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 190px;
+    height: 116px;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px 8px;
+    border: 8px solid #10101d;
+    border-bottom-width: 12px;
+    border-radius: 7px 7px 3px 3px;
+    background: #fff;
+    box-shadow: 0 8px 0 #292f3d, 0 14px 16px rgba(0, 0, 0, .18);
+  }
+
+  .abhay-laptop-logo::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2b3240;
+  }
+
+  .abhay-laptop-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .abhay-orbit-badge {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--orange);
+    border: 2px solid rgba(0, 119, 255, .5);
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(19, 79, 170, .34);
+  }
+
+  .abhay-badge-one {
+    left: 6%;
+    top: 16%;
+    background: linear-gradient(135deg, #5046d9, #ff5126);
+  }
+
+  .abhay-badge-two {
+    left: 17%;
+    top: 51%;
+    background: linear-gradient(135deg, #6b5cff, #ff5126);
+  }
+
+  .abhay-badge-three {
+    left: 25%;
+    bottom: 3%;
+    background: linear-gradient(135deg, #ffd43b, #ff5126);
+  }
+
+  .abhay-badge-four {
+    right: 0;
+    bottom: 18%;
+    background: linear-gradient(135deg, #3059d9, #ffd13b);
+  }
+
+  .abhay-badge-five {
+    right: 5%;
+    top: 34%;
+    background: linear-gradient(135deg, #ff5126, #2f9cff);
+  }
+
+  .abhay-badge-six {
+    right: 14%;
+    top: 2%;
+    background: linear-gradient(135deg, #16a5ff, #ff5126);
+  }
+
+  .abhay-badge-seven {
+    left: 39%;
+    top: 8%;
+    background: #fff;
+    color: var(--orange);
+  }
+
+  .abhay-badge-eight {
+    left: 43%;
+    bottom: 8%;
+    background: linear-gradient(135deg, #101723, #ff5126);
+  }
+
+  .abhay-support-float {
+    position: fixed;
+    right: 22px;
+    bottom: 18px;
+    z-index: 40;
+    width: 74px;
+    height: 74px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #50e6c2;
+    box-shadow: 0 8px 18px rgba(10, 74, 98, .2);
+  }
+
+  .abhay-support-float span {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50% 50% 46% 46%;
+    background: #ffd26a;
+  }
+
+  .abhay-support-float span::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 28px;
+    height: 22px;
+    border: 6px solid #3d424c;
+    border-bottom: 0;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .abhay-support-float span::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 17px;
+    width: 52px;
+    height: 15px;
+    border-left: 8px solid var(--orange);
+    border-right: 8px solid var(--orange);
+    border-radius: 9px;
+  }
+
+  .abhay-bottom-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 35;
+    height: 38px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--orange);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, .18);
+  }
+
+  .abhay-bottom-cta a {
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border-left: 1px solid rgba(180, 38, 10, .55);
+    border-right: 1px solid rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .abhay-bottom-cta a:hover {
+    filter: brightness(.97);
+  }
+
+  .abhay-mobile-btn {
+    display: none;
+    height: 38px;
+    padding: 0 13px;
+    border-radius: 4px;
+    color: #fff;
+    background: var(--orange);
+    font-weight: 900;
+  }
+/* =========================================================
+   ABHASU MEGA-MENU — refreshed color system
+   Palette:
+   --abhasu-navy        #12203B  (topbar / dark surface)
+   --abhasu-navy-2      #182A4D  (slightly lighter navy for gradients)
+   --abhasu-accent      #FF6A3D  (primary orange — brand color)
+   --abhasu-accent-2    #FFA24C  (warm amber — gradient partner)
+   --abhasu-teal        #17B8A6  (secondary accent — links / "view all")
+   --abhasu-ink         #16213D  (headings on light panel)
+   --abhasu-ink-muted   #6B7686  (body text on light panel)
+   ========================================================= */
+
+:root{
+  --abhasu-navy:#12203B;
+  --abhasu-navy-2:#182A4D;
+  --abhasu-text:#F3F5FA;
+  --abhasu-text-muted:#AEB8CC;
+  --abhasu-border:rgba(255,255,255,0.08);
+
+  --abhasu-accent:#FF6A3D;
+  --abhasu-accent-2:#FFA24C;
+  --abhasu-accent-soft:rgba(255,106,61,0.12);
+  --abhasu-teal:#17B8A6;
+
+  --abhasu-panel-bg:#FFFFFF;
+  --abhasu-panel-border:#EEF0F4;
+  --abhasu-ink:#16213D;
+  --abhasu-ink-muted:#6B7686;
+
+  --abhasu-card-bg:#FBFBFD;
+  --abhasu-card-border:#E9EBF1;
+  --abhasu-card-hover-border:#FFC9A8;
+  --abhasu-card-hover-bg:#FFF6EF;
+}
+
+/* ===== top bar (demo host) ===== */
+.abhay-abhasu-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 32px;
+  height:68px;
+  background:linear-gradient(180deg, var(--abhasu-navy) 0%, var(--abhasu-navy-2) 100%);
+  border-bottom:1px solid var(--abhasu-border);
+  position:relative;
+  z-index:50;
+}
+.abhay-abhasu-brand{
+  font-family:'Sora',sans-serif;
+  font-weight:800;
+  font-size:20px;
+  letter-spacing:0.02em;
+  color:var(--abhasu-text);
+}
+.abhay-abhasu-brand span{color:var(--abhasu-accent);}
+
+.abhay-abhasu-nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+  font-weight:500;
+}
+.abhay-abhasu-nav-link{
+  color:var(--abhasu-text-muted);
+  text-decoration:none;
+  transition:color .18s ease;
+}
+.abhay-abhasu-nav-link:hover{color:var(--abhasu-text);}
+
+/* ===== trigger ===== */
+.abhay-abhasu-dropdown-wrap{position:relative;}
+.abhay-abhasu-trigger{
+  display:flex;
+  font-family: 'Poppins', sans-serif;
+  /* align-items:center; */
+  margin-top: -4px;
+  /* gap:5px; */
+  background:none;
+  border:none;
+  font-weight: 900;
+  color:black;
+  /* font-family:'Inter',sans-serif; */
+  font-size:15px;
+  cursor:pointer;
+  padding-top:5px ;
+  position:relative;
+}
+.abhay-abhasu-trigger:hover{color:var(--abhasu-accent-2);}
+.abhay-abhasu-trigger:focus-visible{
+  outline:2px solid var(--abhasu-accent);
+  outline-offset:3px;
+  border-radius:6px;
+}
+.abhay-abhasu-caret{
+  width:9px;height:9px;
+  border-right:2px solid var(--abhasu-accent);
+  border-bottom:2px solid var(--abhasu-accent);
+  transform:rotate(45deg);
+  transition:transform .22s ease;
+  margin-top:-4px;
+}
+.abhay-abhasu-trigger[aria-expanded="true"] .abhay-abhasu-caret{
+  transform:rotate(225deg);
+  margin-top:3px;
+}
+.abhay-abhasu-trigger-underline{
+  position:absolute;
+  left:4px;right:4px;bottom:2px;
+  height:2px;
+  background:linear-gradient(90deg, var(--abhasu-accent), var(--abhasu-accent-2));
+  border-radius:2px;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+.abhay-abhasu-trigger[aria-expanded="true"] + .abhay-abhasu-trigger-underline,
+.abhay-abhasu-trigger[aria-expanded="true"] ~ .abhay-abhasu-trigger-underline{
+  transform:scaleX(1);
+}
+
+/* ===== panel ===== */
+.abhay-abhasu-panel{
+  position:absolute;
+  left:135%;
+  transform:translate(-50%,-8px);
+  width:min(1300px, 92vw);
+  background:var(--abhasu-panel-bg);
+  border:1px solid var(--abhasu-panel-border);
+  border-radius:18px;
+  box-shadow:0 30px 60px -20px rgba(18,32,59,0.28), 0 0 0 1px rgba(18,32,59,0.03);
+  display:flex;
+  overflow:hidden;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease, visibility .22s;
+  z-index:60;
+  max-height:58vh;
+}
+.abhay-abhasu-panel.abhay-abhasu-open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0);
+}
+
+/* sidebar */
+.abhay-abhasu-sidebar{
+  width:260px;
+  flex:none;
+  background:linear-gradient(180deg, #FAFAFC 0%, #F5F6FA 100%);
+  border-right:1px solid var(--abhasu-panel-border);
+  padding:18px 10px;
+  overflow-y:auto;
+}
+.abhay-abhasu-sidebar-eyebrow{
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#9AA3B5;
+  padding:6px 14px 10px;
+  font-weight:700;
+}
+.abhay-abhasu-sidebar-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  text-align:left;
+  background:none;
+  border:none;
+  color:var(--abhasu-ink-muted);
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  font-weight:500;
+  padding:11px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  position:relative;
+  transition:background .18s ease, color .18s ease;
+}
+.abhay-abhasu-sidebar-item:hover{
+  background:var(--abhasu-accent-soft);
+  color:var(--abhasu-ink);
+}
+.abhay-abhasu-sidebar-item.abhay-abhasu-active{
+  background:linear-gradient(90deg, var(--abhasu-accent) 0%, var(--abhasu-accent-2) 100%);
+  color:#FFFFFF;
+  box-shadow:0 6px 16px -6px rgba(255,106,61,0.55);
+}
+.abhay-abhasu-sidebar-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#C7CCD8;
+  flex:none;
+  transition:background .18s ease, transform .18s ease;
+}
+.abhay-abhasu-sidebar-item.abhay-abhasu-active .abhay-abhasu-sidebar-dot{
+  background:#FFFFFF;
+  transform:scale(1.3);
+  box-shadow:0 0 0 4px rgba(255,255,255,0.25);
+}
+.abhay-abhasu-sidebar-count{
+  margin-left:auto;
+  font-size:11.5px;
+  font-weight:600;
+  color:var(--abhasu-ink-muted);
+  background:rgba(18,32,59,0.05);
+  padding:2px 7px;
+  border-radius:20px;
+}
+.abhay-abhasu-sidebar-item.abhay-abhasu-active .abhay-abhasu-sidebar-count{
+  color:#FFFFFF;
+  background:rgba(255,255,255,0.22);
+}
+
+/* content */
+.abhay-abhasu-content{
+  flex:1;
+  padding:22px 24px;
+  overflow-y:auto;
+}
+.abhay-abhasu-content-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:16px;
+}
+.abhay-abhasu-content-title{
+  font-family:'Sora',sans-serif;
+  font-size:19px;
+  font-weight:700;
+  margin:0;
+  color:var(--abhasu-ink);
+}
+.abhay-abhasu-content-sub{
+  font-size:12.5px;
+  color:var(--abhasu-ink-muted);
+  margin:2px 0 0;
+}
+.abhay-abhasu-viewall{
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--abhasu-teal);
+  text-decoration:none;
+  white-space:nowrap;
+}
+.abhay-abhasu-viewall:hover{text-decoration:underline;}
+
+.abhay-abhasu-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:12px;
+}
+
+.abhay-abhasu-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:14px;
+  border:1px solid var(--abhasu-card-border);
+  border-radius:12px;
+  background:var(--abhasu-card-bg);
+  text-decoration:none;
+  color:var(--abhasu-ink);
+  box-shadow:0 1px 2px rgba(18,32,59,0.04);
+  transition:border-color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease;
+  animation:abhasuFadeIn .28s ease both;
+}
+.abhay-abhasu-card:hover{
+  border-color:var(--abhasu-card-hover-border);
+  background:var(--abhasu-card-hover-bg);
+  transform:translateY(-3px);
+  box-shadow:0 12px 24px -12px rgba(255,106,61,0.35);
+}
+.abhay-abhasu-card-top{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.abhay-abhasu-badge{
+  width:34px;height:34px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Sora',sans-serif;
+  font-weight:700;
+  font-size:13px;
+  color:#FFFFFF;
+  flex:none;
+  box-shadow:0 4px 10px -4px rgba(18,32,59,0.35);
+}
+.abhay-abhasu-card-title{
+  font-size:13.5px;
+  font-weight:600;
+  line-height:1.25;
+  color:var(--abhasu-ink);
+}
+.abhay-abhasu-card-desc{
+  font-size:12px;
+  color:var(--abhasu-ink-muted);
+  line-height:1.45;
+  margin:0;
+  flex:1;
+  text-wrap: wrap;
+}
+.abhay-abhasu-card-cta{
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--abhasu-accent);
+  align-self:flex-start;
+}
+.abhay-abhasu-card-cta::after{
+  content:" \2192";
+}
+.abhay-abhasu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(10,15,28,0.5);
+  backdrop-filter:blur(2px);
+  z-index:55;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .22s ease, visibility .22s;
+}
+.abhay-abhasu-overlay.abhay-abhasu-open{
+  opacity:1;
+  visibility:visible;
+}
+
+.abhay-abhasu-close{
+  display:none;
+}
+
+/* claude-changes: fixed typo ".abhay-training-card-containe" -> ".abhay-training-card-container" */
+.abhay-training-card-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+
+
+/* TRAINING DROPDOWN CSS */
+/* Container */
+
+/* ===== Overlay ===== */
+
+/* claude-changes: start (popup box resized + training content styling added) */
+/* claude-changes: about-popup note - these are class-based selectors (not ID
+   based), so this exact same block now also styles #popupAbout below,
+   no extra CSS needed for the About popup. */
+/* Overlay stays full-screen (same as abhasu-overlay) — it only dims the
+   background, it is NOT the box that content sits in. */
+.abhay-popup{
+
+display:none;
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:rgba(10,15,28,0.5);
+
+backdrop-filter:blur(2px);
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+}
+
+.abhay-popup.abhay-active{
+
+display:flex;
+
+}
+.ab-img {
+    width: 21px !important;
+    height: 21px!important;
+}
+
+/* This is the actual "boxed area" — same sizing philosophy as
+   .abhay-abhasu-panel (limited width + limited height + scroll inside),
+   NOT the whole screen. */
+.abhay-popup-content{
+
+width:min(1300px, 92vw);
+
+max-height:80vh;
+
+overflow-y:auto;
+
+background:var(--abhasu-panel-bg, #fff);
+
+padding:32px;
+
+border-radius:18px;
+
+box-shadow:0 30px 60px -20px rgba(18,32,59,0.28), 0 0 0 1px rgba(18,32,59,0.03);
+
+position:relative;
+
+}
+
+.abhay-close{
+
+position:absolute;
+
+top:15px;
+
+right:20px;
+
+font-size:26px;
+
+line-height:1;
+
+width:32px;
+height:32px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(18,32,59,0.06);
+
+cursor:pointer;
+
+}
+.abhay-quick-btn-ai {
+  position: relative;
+  overflow: visible;
+}
+
+.abhay-ai-badge-mobile {
+  display: none;
+}
+
+.abhay-close:hover{
+  background:rgba(18,32,59,0.12);
+}
+
+/* ===== Training popup content styling ===== */
+.abhay-training-heading{
+  text-align:center;
+  margin-bottom:22px;
+}
+.abhay-training-heading h2{
+  font-family:'Sora', sans-serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--abhasu-ink, #16213D);
+  margin:0 0 6px;
+}
+.abhay-training-heading p{
+  font-family:'Inter', sans-serif;
+  font-size:13.5px;
+  color:var(--abhasu-ink-muted, #6B7686);
+  margin:0;
+  word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.ab-number-sec{display: none;}
+
+.abhay-training-card-container .abhay-card{
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--abhasu-card-border, #E9EBF1);
+  border-radius:14px;
+  background:var(--abhasu-card-bg, #FBFBFD);
+  overflow:hidden;
+  text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  align-items: center;
+  justify-content: center;
+}
+.abhay-training-card-container .abhay-card:hover{
+  border-color:var(--abhasu-card-hover-border, #FFC9A8);
+  transform:translateY(-3px);
+  background: #fff6ef;
+  box-shadow:0 12px 24px -12px rgba(255,106,61,0.35);
+}
+.abhay-training-card-container .abhay-card img{
+  height:50px;
+  object-fit:cover;
+       display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+}
+.abhay-training-card-container .abhay-card h3{
+  font-family:'Sora', sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--abhasu-ink, #16213D);
+  margin:14px 6px 6px;
+}
+.abhay-training-card-container .abhay-card p{
+  font-family:'Inter', sans-serif;
+  font-size:12.5px;
+  color:var(--abhasu-ink-muted, #6B7686);
+  line-height:1.5;
+  margin:0 16px 12px;
+  flex:1;
+      word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+    padding-top: 10px;
+
+}
+.abhay-training-card-container .abhay-card a{
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--abhasu-accent, #FF6A3D);
+  text-decoration:none;
+  margin:0 16px 16px;
+  text-align: center;
+}
+.abhay-training-card-container .abhay-card a:hover{
+  text-decoration:underline;
+}
+
+/* claude-changes: about-popup only has 2 cards, so give it its own
+   2-column grid (scoped to #popupAbout) without touching the Training
+   popup's 3-column grid which still has 6 cards. Also center-align
+   About's card text only — Training popup's cards stay left-aligned
+   as before. */
+#popupAbout .abhay-training-card-container{
+  grid-template-columns:repeat(2, 1fr);
+}
+#popupAbout .abhay-training-card-container .abhay-card{
+  text-align:center;
+}
+
+/* claude-changes: end */
+
+.abhay-image-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: max-content;
+}
+
+.abhay-image-heading img{
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin: 0;
+}
+
+.abhay-image-heading h3{
+  font-weight: 500;
+}
+
+.abhay-abt-img-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: max-content;
+}
+
+.abhay-abt-img-head img{
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin: 0;
+}
+
+.abhay-abt-img-head h3{
+  font-weight: 900;
+  font-weight: bold;
+}
+
+.abhay-abhasu-course-img{
+  width: 40px;
+  height: 40px;
+
+}
+
+.phone-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.phone-icon-btn {
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+}
+.ab-number{ 
+    font-size: 12px;
+    font-weight: 700;
+}
+.phone-icon-btn svg {
+    width: 19px;
+    height: 19px;
+    fill: #ff5f0f;
+}
+.phone-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 170px;
+  z-index: 999;
+}
+.phone-dropdown-menu.abhay-is-open {
+  display: block;
+}
+.phone-dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.phone-dropdown-menu a:hover {
+  background: #f2f2f2;
+}
+
+/* Default (desktop): show numbers, hide icon+dropdown */
+.abhay-desktop-numbers {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.phone-dropdown {
+  display: none;
+  position: relative;
+}
+.abhay-quick-actions{
+  display:none;
+}
+
+.abhay-category-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.abhay-category-icon {
+    flex-shrink: 0;
+    color: #fff;
+    width: 22px;
+    margin-left: -2px;
+}
+       /* reposive*/
+  @media (max-width:1354px){
+
+    .abhay-primary-nav {
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: clamp(19px, 2.35vw, 17px);
+    /* padding-top: 7px; */
+    color: #000;
+    font-size: 14px;
+    font-weight: 900;
+    white-space: nowrap;
+    }
+     .abhay-category-btn {
+        width: 138px;
+        height: 36px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 15px;
+        margin-top: -4px;
+        font-weight: 700;
+        margin-left: -67px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+    }
+
+    .abhay-abhasu-trigger{
+    display: flex;
+    margin-top: -4px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    padding-top: 5px;
+    position: relative;
+} 
+.abhay-rank {
+        margin-left: 120px;
+        max-width: 119px;
+        flex: 0 1 510px;
+        display: flex;
+        align-items: flex-start;
+        gap: 3px;
+        padding-top: 17px;
+    }
+    .abhay-top-row {
+    position: relative;
+    font-family: 'Roboto', Arial, sans-serif;
+    height: 52px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0 13px 0 35px;
+    background: var(--top-bg);
+}
+.abhay-rank span {
+        margin-top: -5px;
+        color: #15191f;
+        font-size: 10px;
+        width: 103px;
+        line-height: 13px;
+        font-weight: 800;
+    }
+  .abhay-rank strong {
+    color: var(--orange);
+    font-size: 32px;
+    margin-top: -6px;
+    line-height: 28px;
+    font-weight: 800;
+  } 
+    .abhay-launch-strip {
+        min-height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 37px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+.abhay-green-pill {
+    min-width: 145px;
+    color: #fff;
+    background: linear-gradient(90deg, #2a9879, #28bd7a);
+    font-weight: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .35), inset 0 1px 2px rgba(255, 255, 255, .25);
+       }
+
+.abhay-header-pill {
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 3px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, .35);
+}
+.abhay-blue-pill {
+    background: var(--blue);
+    min-width: 170px;
+}
+
+.abhay-lime-pill {
+    min-width: 161px;
+    background: var(--lime);
+    border: 2px solid #ffe964;
+    color: #000;
+}
+
+.abhay-brand {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: 140px;
+        height: 95px;
+        flex: 0 0 166px;
+        background-color: var(--top-bg);
+}
+.abhay-nav-row {
+    height: 52px;
+    display: grid;
+    grid-template-columns: 408px 1fr;
+    align-items: start;
+    padding: 14px 27px 0 255px;
+    background: #fff;
+}
+  }
+
+
+    @media (max-width: 1205px){
+   .abhay-launch-strip {
+        min-height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 37px;
+        padding: 6px 18px;
+        background: var(--orange);}
+
+    .abhay-blue-pill {
+      min-width: 112px;
+    }
+  } 
+
+  @media(max-width: 1145px){
+    .abhay-contact-bar {
+    height: 32px;
+    gap: 5px;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #000;
+    font-size: clamp(11px, .86vw, 18px);
+    line-height: 18px;
+    font-weight: 900;
+}
+
+    .abhay-launch-strip {
+        min-height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 37px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+
+        .abhay-primary-nav {
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: clamp(19px, 2.35vw, 17px);
+        color: #000;
+        font-size: 12px;
+        font-weight: 900;
+        white-space: nowrap;
+    }
+
+        .abhay-abhasu-trigger {
+        display: flex;
+        margin-top: -3px;
+        background: none;
+        border: none;
+        color: black;
+        font-size: 12px;
+        cursor: pointer;
+        padding-top: 5px;
+        position: relative;
+    }
+        .abhay-lime-pill {
+        min-width: 150px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+    }
+    .abhay-blue-pill {
+        min-width: 110px;
+    }
+    .abhay-header-pill {
+        height: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 0 3px;
+        border-radius: 7px;
+        color: #fff;
+        font-size: 10px;
+        line-height: 18px;
+        font-weight: 600;
+        box-shadow: inset 0 1px 2px rgba(255, 255, 255, .35);
+    }
+        .abhay-lime-pill {
+        min-width: 161px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+      }
+    .abhay-category-menu a {
+        width: 295px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+
+    .abhay-submenu {
+        position: absolute;
+        top: -2px;
+        left: 300px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+  }
+  @media(max-width:1075px){
+        .abhay-header-pill {
+        height: 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 0 3px;
+        border-radius: 7px;
+        color: #fff;
+        font-size: 9px;
+        line-height: 18px;
+        font-weight: 600;
+        box-shadow: inset 0 1px 2px rgba(255, 255, 255, .35);
+    }
+    .abhay-rank span {
+        margin-top: -6px;
+        color: #15191f;
+        font-size: 10px;
+        width: 103px;
+        line-height: 13px;
+        font-weight: 800;
+    }
+.abhay-brand-logo {
+    width: 129px;
+    height: 82px;
+    display: block;
+    object-fit: contain;
+    object-position: left top;
+}
+    .abhay-brand {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: 120px;
+        height: 95px;
+        flex: 0 0 166px;
+        background-color: var(--top-bg);
+    }
+    .abhay-lime-pill {
+        min-width: 161px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+    }
+        .abhay-category-btn {
+        width: 105px;
+        height: 30px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 11px;
+        margin-top: -4px;
+        font-weight: 900;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+    }
+    .abhay-fee-pay-btn {
+    top: -5px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 7px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    background: linear-gradient(#1d9728, #116f18);
+  }
+  .abhay-contact-bar {
+        height: 32px;
+        gap: 3px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(10px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 900;
+    }
+}
+@media(max-width:1025px){
+.abhay-primary-nav {
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: clamp(15px, 2.35vw, 15px);
+        color: #000;
+        font-size: 10px;
+        font-weight: 900;
+        white-space: nowrap;
+    } 
+      .abhay-category-btn {
+        width: 119px;
+        height: 30px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 10px;
+        margin-top: -4px;
+        font-weight: 900;
+        margin-left: -89px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+    }
+.abhay-nav-row {
+        height: 45px;
+        justify-content: space-between;
+        display: flex;
+        grid-template-columns: 408px 1fr;
+        align-items: start;
+        padding: 11px 15px 0 255px;
+        background: #fff;
+    }
+        .abhay-brand {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: 110px;
+        height: 88px;
+        flex: 0 0 166px;
+        background-color: var(--top-bg);
+    }
+        .abhay-rank span {
+        margin-top: -5px;
+        color: #15191f;
+        font-size: 10px;
+        width: 98px;
+        line-height: 13px;
+        font-weight: 800;
+    }
+          .abhay-brand-logo {
+        width: 126px;
+        height: 74px;
+        display: block;
+        object-fit: contain;
+        object-position: left top;
+    }
+        .abhay-abhasu-trigger {
+        display: flex;
+        margin-top: -1px;
+        background: none;
+        border: none;
+        font-weight: 700;
+        color: black;
+        font-size: 10px;
+        cursor: pointer;
+        padding-top: 6px;
+        position: relative;
+    }
+        .abhay-fee-pay-btn {
+        top: -5px;
+        height: 27px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 6px;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 10px;
+        background: linear-gradient(#1d9728, #116f18);
+    }
+
+    .abhay-launch-strip {
+        min-height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+
+    .abhay-category-menu a {
+        width: 275px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+
+.abhay-submenu {
+        position: absolute;
+        top: -1px;
+        left: 280px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+.abhay-category-menu {
+    position: absolute;
+    top: 35px;
+    left: -89px;
+    z-index: 20;
+    width: 314px;
+    display: none;
+    padding: 0;
+    border-radius: 4px;
+    background: transparent;
+}
+  }
+  @media (max-width: 1010px) {
+        .abhay-launch-strip {
+        min-height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+    .abhay-lime-pill {
+        min-width: 125px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+      }
+      .abhay-green-pill {
+        min-width: 120px;
+        color: #fff;
+        background: linear-gradient(90deg, #2a9879, #28bd7a);
+        font-weight: 900;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .35), inset 0 1px 2px rgba(255, 255, 255, .25);
+    }
+        .abhay-contact-bar {
+        height: 32px;
+        gap: 3px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 600;
+    }
+  }
+  @media (max-width: 945px){
+    .abhay-category-icon {
+    flex-shrink: 0;
+    color: #fff;
+    width: 20px;
+    margin-left: -2px;
+}
+    .abhay-contact-bar {
+        height: 32px;
+        gap: 3px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 600;
+    }
+  }
+  @media(max-width: 900px){
+        .abhay-primary-nav {
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: clamp(17px, 2.35vw, 17px);
+        color: #000;
+        font-size: 9px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+    .abhay-abhasu-trigger {
+        display: flex;
+        margin-top: 1px;
+        background: none;
+        border: none;
+        font-weight: 700;
+        color: black;
+        font-size: 9px;
+        cursor: pointer;
+        padding-top: 5px;
+        position: relative;
+    }
+     .abhay-contact-bar {
+        height: 32px;
+        gap: 3px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, 0.86vw, 6px);
+        line-height: 18px;
+        font-weight: 700;
+    }
+  }
+   @media (max-width: 860px) {
+    .abhay-popup-content{
+    width:94vw;
+    padding:20px;
+  }
+  .abhay-quick-actions{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-left:auto;   /* space-between ko override karke right side pe le jaata hai */
+    order:1;
+  }
+   .abhay-menu-toggle{
+    order:2;
+    margin-left:8px;    /* quick-actions aur menu button ke beech gap */
+  }
+    .abhay-quick-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        height: 26px;
+        padding: 0 10px;
+        /* border-radius: 20px; */
+        background: #ffffff;
+        color: #000000;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+        /* box-shadow: 0 3px 8px rgba(255, 81, 38, .35); */
+    }
+  .abhay-quick-icon{ font-size:10px; color: linear-gradient(90deg, var(--abhasu-accent) 0%, var(--abhasu-accent-2) 100%);}
+
+  .abhay-primary-nav .abhay-placement-link,
+  .abhay-primary-nav .abhay-career-link{
+    display:none;
+  }
+    .abhay-mobile-btn {
+        display: none;
+        height: 30px;
+        padding: 0 8px;
+        border-radius: 4px;
+        color: #fff;
+        margin-top: -6px;
+        background: var(--orange);
+        font-weight: 900;
+    }
+      .abhay-category-btn {
+        width: 115px;
+        height: 31px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 10px;
+        margin-top: -5px;
+        font-weight: 900;
+        margin-left: -89px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+    }
+.abhay-primary-nav {
+    position: absolute;
+    top: 136px;
+    right: 20px;
+    z-index: 25;
+    width: min(330px, calc(100vw - 36px));
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+    font-size: 16px;
+}
+    .abhay-brand {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        width: 120px;
+        height: 84px;
+        flex: 0 0 166px;
+        background-color: #ffffff;
+    }
+  .abhay-training-card-container{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+    .abhay-rank {
+      width: 250px;
+      flex-basis: 250px;
+    }
+   #abhay-gmail{
+   display: flex;
+  }
+.abhay-gmail {
+        flex-shrink: 0;
+        height: 15px;
+        width: 16px;
+        transform: translateY(-1px);
+    }
+    .abhay-email{
+      display: none;
+    }
+
+         .abhay-primary-nav {
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: clamp(10px, 2.35vw, 10px);
+        /* padding-top: 7px; */
+        color: #000;
+        font-size: 9px;
+        font-weight: 900;
+        white-space: nowrap;
+}
+    .abhay-abhasu-trigger {
+        display: flex;
+        margin-top: 0px;
+        margin-left: -6px;
+        background: none;
+        border: none;
+        font-weight: 900;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+        padding-top: 0px;
+        position: relative;
+    }
+        .abhay-launch-strip {
+        min-height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+        .abhay-green-pill {
+        min-width: 109px;
+        color: #fff;
+        background: linear-gradient(90deg, #2a9879, #28bd7a);
+        font-weight: 900;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .35), inset 0 1px 2px rgba(255, 255, 255, .25);
+    }
+        .abhay-header-pill {
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 3px;
+        border-radius: 7px;
+        color: #fff;
+        font-size: 8px;
+        line-height: 18px;
+        font-weight: 600;
+        box-shadow: inset 0 1px 2px rgba(255, 255, 255, .35);
+    }
+        .abhay-lime-pill {
+        min-width: 115px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+    }
+    .abhay-rank span {
+        margin-top: -9px;
+        color: #15191f;
+        font-size: 11px;
+        width: 100px;
+        line-height: 13px;
+        font-weight: 900;
+    }
+    .abhay-rank strong {
+        color: var(--orange);
+        font-size: 32px;
+        margin-top: -10px;
+        line-height: 28px;
+        font-weight: 800;
+    }
+    .abhay-contact-bar {
+        height: 40px;
+        gap: 5px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+.abhay-top-row {
+        position: relative;
+        font-family: 'Roboto', Arial, sans-serif;
+        height: 52px;
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        padding: 0 13px 0 35px;
+        background: #ffffff;
+    }
+     .abhay-rank {
+        margin-left: 102px;
+        max-width: 176px;
+        flex: 0 1 510px;
+        display: flex;
+        align-items: flex-start;
+        gap: 3px;
+        padding-top: 17px;
+    }
+      .abhay-category-wrap{
+      display: flex;
+      justify-content: center;
+  }
+   .abhay-contact-toggle {
+    display: none; 
+  }
+    .abhay-menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+.abhay-contact-bar.abhay-is-open {
+      display: flex;
+    }
+      .abhay-nav-row {
+        height: auto;
+        min-height: 41px;
+        gap: 14px;
+        padding: 6px 22px 0 237px;
+    }
+    .abhay-menu-toggle {
+      align-self: center;
+    }
+    .abhay-primary-nav {
+      position: absolute;
+      top: 99px;
+      right: 20px;
+      z-index: 25;
+      width: min(330px, calc(100vw - 36px));
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px;
+      border: 1px solid #e5e5e5;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+      font-size: 16px;
+    }
+    .abhay-primary-nav.abhay-is-open {
+      display: flex;
+    }
+    .abhay-ai-badge {
+   display: none;
+    }
+    .abhay-fee-pay-btn {
+      top: auto;
+      width: fit-content;
+    }
+    .abhay-launch-strip {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      justify-content: center;
+    }
+    .abhay-hero-section {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 46px 28px;
+      background: #f4f8fc;
+    }
+    .abhay-hero-content {
+      max-width: 760px;
+    }
+    .abhay-hero-content h1 {
+      white-space: normal;
+    }
+    .abhay-hero-content h1,
+    .abhay-hero-content h2,
+    .abhay-hero-copy {
+      max-width: 760px;
+    }
+    .abhay-hero-visual {
+      min-height: 360px;
+      place-items: start;
+    }
+    .abhay-orbit-graphic {
+      width: min(430px, 86vw);
+    }
+    .abhay-orbit-badge {
+      width: 64px;
+      height: 64px;
+      font-size: 14px;
+    }
+    .abhay-laptop-logo {
+      width: 168px;
+      height: 102px;
+    }
+    .abhay-bottom-cta a {
+      font-size: 12px;
+    }
+
+  .abhay-abhasu-topbar{padding:0 16px;}
+  .abhay-abhasu-nav{display:none;}
+
+  .abhay-abhasu-panel{
+    position:fixed;
+    top:68px;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    max-height:none;
+    border-radius:0;
+    transform:translateY(8px);
+    flex-direction:column;
+  }
+  .abhay-abhasu-panel.abhay-abhasu-open{
+    transform:translateY(0);
+  }
+
+  .abhay-abhasu-close{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin:10px 16px 0 auto;
+    width:32px;height:32px;
+    border-radius:50%;
+    background:rgba(18,32,59,0.06);
+    border:none;
+    color:var(--abhasu-ink);
+    font-size:16px;
+    cursor:pointer;
+  }
+
+  .abhay-abhasu-sidebar{
+    width:100%;
+    display:flex;
+    gap:8px;
+    padding:10px 12px;
+    border-right:none;
+    border-bottom:1px solid var(--abhasu-panel-border);
+    overflow-x:auto;
+    overflow-y:visible;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
+  }
+  .abhay-abhasu-sidebar-eyebrow{display:none;}
+  .abhay-abhasu-sidebar-item{
+    flex:none;
+    padding:9px 14px;
+    border-radius:999px;
+    background:rgba(18,32,59,0.05);
+    width: max-content;
+  }
+  .abhay-abhasu-sidebar-item.abhay-abhasu-active{
+    background:linear-gradient(90deg, var(--abhasu-accent) 0%, var(--abhasu-accent-2) 100%);
+    color:#FFFFFF;
+  }
+  .abhay-abhasu-sidebar-item.abhay-abhasu-active .abhay-abhasu-sidebar-dot{
+    background:#FFFFFF;
+    box-shadow:none;
+  }
+  .abhay-abhasu-sidebar-count{display:none;}
+
+  .abhay-abhasu-content{
+    flex:1;
+    padding:16px;
+  }
+  .abhay-abhasu-content-title{font-size:17px;}
+
+  .abhay-abhasu-grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+       .abhay-category-menu a {
+        width: 240px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+        .abhay-category-menu {
+        position: absolute;
+        top: 34px;
+        left: -32px;
+        z-index: 20;
+        width: 314px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+    .abhay-submenu {
+        position: absolute;
+        top: -1px;
+        left: 244px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+    .abhay-menu-icon{
+      margin-right: 6px;
+    }
+      .abhay-ai-badge-mobile {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    height: 18px;
+    padding: 0 9px;
+    border-radius: 14px;
+    color: #fff;
+    background: #ff6133;
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  }
+
+  .abhay-ai-badge-mobile::before {
+    content: "\2742";
+    margin-right: 3px;
+    font-size: 9px;
+  }
+}
+   
+   @media (max-width: 780px){
+
+    .support-no{
+      display: none;
+    }
+    #phone-no{
+      display: none;
+    }
+    .abhay-support{
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+    .abhay-launch-strip {
+        min-height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 6px 18px;
+        background: var(--orange);
+    }
+    .abhay-green-pill {
+        min-width: 95px;
+        color: #fff;
+        background: linear-gradient(90deg, #2a9879, #28bd7a);
+        font-weight: 900;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .35), inset 0 1px 2px rgba(255, 255, 255, .25);
+    }
+    .abhay-blue-pill {
+        background: var(--blue);
+        min-width: 97px;
+    }
+        .abhay-lime-pill {
+        min-width: 95px;
+        background: var(--lime);
+        border: 2px solid #ffe964;
+        color: #000;
+    }
+    .abhay-nav-row {
+        height: auto;
+        min-height: 41px;
+        gap: 14px;
+    }
+    .abhay-category-menu a {
+        width: 214px;
+        height: 29px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 10px;
+        line-height: 18px;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+        .abhay-category-menu {
+        position: absolute;
+        top: 35px;
+        left: -33px;
+        z-index: 20;
+        width: 314px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+    .abhay-submenu {
+        position: absolute;
+        top: 0px;
+        left: 218px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+    .abhay-contact-bar {
+        height: 36px;
+        gap: 14px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+    .ab-img {
+    width: 17px !important;
+    height: 21px!important;
+}
+        .abhay-rank span {
+        margin-top: -9px;
+        color: #15191f;
+        font-size: 10px;
+        width: 98px;
+        line-height: 13px;
+        font-weight: 900;
+    }
+  .abhay-phone{
+    display: block;
+    width: 30px;
+    height: 20px;
+  } 
+   }
+
+
+   @media(max-width: 680px){
+        .abhay-launch-strip {
+        display: none;
+    }
+
+.abhay-category-menu a {
+        width: 188px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 9px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+        .abhay-category-menu {
+        position: absolute;
+        top: 35px;
+        left: -63px;
+        z-index: 20;
+        width: 314px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+.abhay-submenu {
+        position: absolute;
+        top: 0px;
+        left: 190px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+   }
+   @media (max-width: 640px) {
+    
+
+
+    .abhay-ai-badge-mobile {
+        display: inline-flex;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translateX(-50%);
+        /* margin-bottom: 5px; */
+        height: 18px;
+        padding: 0 9px;
+        border-radius: 14px;
+        color: #fff;
+        background: #ff6133;
+        font-size: 8px;
+        line-height: 1;
+        font-weight: 900;
+        top: -17px;
+        white-space: nowrap;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+
+    .abhay-top-row {
+      position: relative;
+      height: 0px;
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      grid-template-rows: 30px 36px;
+      align-items: start;
+      gap: 0 6px;
+      padding: 3px 9px 0;
+    }
+
+    .abhay-brand {
+        grid-column: 1;
+        grid-row: 2;
+        width: 86px;
+        height: 55px;
+        background-color: transparent;
+        flex-basis: auto;
+        transform: none;
+        left: 1px;
+        top: -3px;
+    }
+       .abhay-contact-bar {
+        height: 25px;
+        gap: 17px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+    .ab-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+    .abhay-brand-logo {
+      margin-top: -41px;
+      width: 84px;
+      height: 38px;
+    }
+
+    .abhay-rank {
+        grid-column: 1;
+        grid-row: 1;
+        gap: 2px;
+        padding-top: 11px;
+        max-width: 300px !important;
+        margin-left: -20px;
+    }
+
+    .abhay-rank strong {
+        font-size: 25px;
+        line-height: 1px;
+    }
+
+    .abhay-rank span {
+        font-size: 9px;
+        width: 90px;
+        line-height: 13px;
+        padding-left: 3px;
+        padding-top: 2px;
+    }
+
+    .abhay-contact-toggle {
+      display: none;
+    }
+
+     .abhay-rank strong {
+        padding-left: 100px;
+        padding-top: 32px;
+        margin-top: -26px;
+    }
+
+    /* .abhay-contact-bar {
+      position: static;
+      grid-column: 2;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      align-items: center;
+      justify-content: center;
+      gap: 0 4px;
+      padding: 0 2px;
+      overflow: visible;
+      white-space: normal;
+      border: 0;
+      box-shadow: none;
+      background: transparent;
+      font-size: clamp(5.4px, 2vw, 7.6px);
+      line-height: 8px;
+    } */
+    .abhay-contact-bar a[href^="mailto"] {
+      display: none;
+    }
+
+    .abhay-contact-bar a:first-of-type {
+      max-width: 100%;
+      /* text-align: center; */
+    }
+
+    .abhay-sep {
+    width: 3px;
+    height: 12px;
+    flex: 0 0 2px;
+    background: var(--orange);
+}
+
+    .abhay-whatsapp {
+      width: 16px;
+      height: 16px;
+      flex-basis: 16px;
+    }
+
+    .abhay-nav-row {
+        height: 76px;
+        min-height: 39px;
+        display: flex;
+        grid-template-columns: auto auto;
+        gap: 7px;
+        align-items: center;
+        padding: 0 10px 0px;
+        justify-content: space-between;
+    }
+
+    .abhay-category-wrap {
+      grid-column: 2;
+      /* justify-self: center; */
+    }
+
+    .abhay-category-wrap::after,
+    .abhay-submenu::before {
+      display: none;
+    }
+
+    .abhay-category-btn {
+        height: 30px;
+        width: 106px;
+        border-radius: 4px;
+        margin-left: 162px;
+        font-size: 10px;
+        margin-top: 34px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+
+    .abhay-category-menu {
+        position: absolute;
+        top: 73px;
+        left: 108px;
+        z-index: 20;
+        width: 314px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+
+    .abhay-category-menu a {
+        width: 170px;
+        height: 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 9px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+
+    .abhay-menu-item {
+      width: 100%;
+    }
+
+    .abhay-submenu {
+        position: absolute;
+        top: 0px;
+        left: 173px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+
+    .abhay-has-submenu::after {
+      display: none;
+    }
+
+    .abhay-has-submenu:hover .abhay-submenu,
+    .abhay-has-submenu:focus-within .abhay-submenu,
+    .abhay-has-submenu.abhay-is-submenu-open .abhay-submenu,
+    .abhay-submenu:hover {
+      display: block;
+    }
+  .abhay-menu-toggle
+ {
+        grid-column: 3;
+        justify-self: end;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border-radius: 4px;
+        font-size: 0;
+        position: relative;
+        margin-top: 38px;
+    }
+
+    .abhay-menu-toggle::before,
+    .abhay-menu-toggle::after,
+    .abhay-menu-toggle span {
+      content: "";
+      position: absolute;
+      /* left: 7px; */
+      /* width: 14px; */
+      /* height: 3px; */
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    .abhay-menu-toggle::before {
+      top: 7px;
+    }
+
+    .abhay-menu-toggle span {
+      top: 13px;
+    }
+.abhay-primary-nav {
+        top: 59px;
+        right: 9px;
+        width: min(240px, calc(100vw - 18px));
+        padding: 12px;
+        gap: 10px;
+        font-size: 14px;
+    }
+        .abhay-abhasu-trigger {
+        display: flex;
+        margin-top: 0px;
+        margin-left: -6px;
+        background: none;
+        border: none;
+        font-weight: 900;
+        color: black;
+        font-size: 14px;
+        cursor: pointer;
+        padding-top: 0px;
+        position: relative;
+    }
+
+    .abhay-launch-strip {
+      display: none;
+    }
+
+    .abhay-hero-section {
+      min-height: auto;
+      display: block;
+      padding: 24px 18px 30px;
+      background: #f4f8fc;
+      text-align: center;
+    }
+
+    .abhay-support-float {
+      right: 14px;
+      bottom: 14px;
+      width: 58px;
+      height: 58px;
+    }
+
+    .abhay-support-float span {
+      width: 36px;
+      height: 36px;
+    }
+
+    .abhay-support-float span::before {
+      left: 7px;
+      top: 7px;
+      width: 22px;
+      height: 18px;
+      border-width: 5px;
+      border-bottom: 0;
+    }
+
+    .abhay-support-float span::after {
+      left: -3px;
+      top: 15px;
+      width: 42px;
+      height: 12px;
+      border-left-width: 6px;
+      border-right-width: 6px;
+    }
+
+    .abhay-hero-kicker {
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .abhay-hero-content h1 {
+      max-width: 100%;
+      font-size: clamp(16px, 3.8vw, 20px);
+      line-height: 1.15;
+    }
+
+    .abhay-hero-content h2 {
+      margin-top: 12px;
+      font-size: clamp(10px, 2.2vw, 13px);
+      line-height: 1.24;
+    }
+
+    .abhay-hero-copy {
+      max-width: 100%;
+      margin-top: 10px;
+      font-size: clamp(10px, 2.1vw, 11px);
+      line-height: 1.4;
+    }
+
+    .abhay-hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .abhay-hero-primary {
+      flex: none;
+      width: 100%;
+      max-width: none;
+      min-width: 0;
+      min-height: 36px;
+      padding: 0 14px;
+      font-size: 12px;
+      box-shadow: 5px 5px 0 rgba(228, 223, 223, .65);
+    }
+
+    .abhay-trusted-row {
+      margin-top: 34px;
+    }
+
+    .abhay-trusted-row > strong {
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .abhay-trusted-logos {
+      justify-content: center;
+      gap: 14px 20px;
+    }
+
+    .abhay-trusted-logos span {
+      font-size: 15px;
+    }
+
+    .abhay-hero-visual {
+      min-height: 280px;
+      margin-top: 28px;
+      place-items: center;
+    }
+
+    .abhay-orbit-graphic {
+      width: min(290px, 84vw);
+    }
+
+    .abhay-orbit {
+      border-width: 4px;
+    }
+
+    .abhay-orbit-badge {
+      width: 42px;
+      height: 42px;
+      font-size: 10px;
+    }
+
+    .abhay-laptop-logo {
+      width: 112px;
+      height: 72px;
+      padding: 8px 10px 5px;
+      border-width: 5px;
+      border-bottom-width: 8px;
+    }
+
+    .abhay-header-pill,
+    .abhay-blue-pill,
+    .abhay-green-pill,
+    .abhay-lime-pill {
+      width: calc(50% - 5px);
+      min-width: 0;
+      padding: 0 8px;
+      font-size: 14px;
+    }
+
+    .abhay-bottom-cta {
+      height: 48px;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 34px;
+      gap: 74px;
+      background: var(--orange);
+    }
+
+    .abhay-bottom-cta a {
+      display: none;
+    }
+
+    .abhay-bottom-cta a:nth-child(3),
+    .abhay-bottom-cta a:nth-child(5) {
+      display: inline-flex;
+      min-width: 72px;
+      height: 36px;
+      align-self: center;
+      border: 0;
+      border-radius: 3px 3px 0 0;
+      background: #15851b;
+      font-size: 12px;
+    }
+      .abhay-quick-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        order: 1;
+        margin-top: 41px;
+    }
+.phone-icon-btn svg {
+        margin-right: -7px;
+        width: 19px;
+        height: 19px;
+        fill: #ff5f0f;
+    }
+        .abhay-menu-icon{
+      margin-right: 0px;
+    }
+    .abhay-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin-right: 6px;
+}
+
+
+  
+  }
+
+  
+  @media (max-width: 520px) {
+    .abhay-hero-section {
+      padding: 24px 20px 28px;
+    }
+
+    .abhay-hero-kicker {
+      font-size: 12px;
+    }
+
+    .abhay-trusted-row {
+      margin-top: 26px;
+    }
+
+    .abhay-trusted-row > strong {
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+
+    .abhay-trusted-logos span {
+      font-size: 12px;
+    }
+
+    .abhay-hero-visual {
+      min-height: 248px;
+      margin-top: 22px;
+    }
+
+    .abhay-orbit-graphic {
+      width: min(250px, 82vw);
+    }
+
+    .abhay-orbit-badge {
+      width: 36px;
+      height: 36px;
+      font-size: 9px;
+    }
+
+    .abhay-laptop-logo {
+      width: 96px;
+      height: 62px;
+    }
+
+    .abhay-category-menu a {
+        width: 145px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 8px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+    .abhay-category-menu {
+        position: absolute;
+        top: 75px;
+        left: 109px;
+        z-index: 20;
+        width: 145px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+      .abhay-submenu {
+        position: absolute;
+        top: -1px;
+        left: 137px;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+    .abhay-quick-actions .abhay-quick-btn:first-child{
+    display:none;
+  }
+  .abhay-primary-nav .abhay-placement-link{
+    display:block;
+  }
+      .abhay-primary-nav {
+        top: 82px;
+        right: 9px;
+        width: min(240px, calc(100vw - 18px));
+        padding: 12px;
+        gap: 10px;
+        font-size: 14px;
+    }
+    .abhay-contact-bar {
+        height: 25px;
+        gap: 11px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+  }
+
+    @media (max-width: 380px) {
+    .abhay-top-row {
+      grid-template-columns: 68px 1fr;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    .abhay-brand {
+      width: 68px;
+    }
+
+    .abhay-brand-logo {
+      width: 68px;
+    }
+
+    
+
+    .abhay-nav-row {
+      grid-template-columns: 68px 1fr 34px;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+
+    .abhay-category-btn {
+        width: 77px;
+        font-size: 6px;
+        height: 23px;
+        margin-left: 259px;
+    }
+
+    .abhay-hero-section {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .abhay-hero-content h1 {
+      font-size: 16px;
+    }
+
+    .abhay-hero-content h2 {
+      font-size: 12px;
+    }
+
+    .abhay-hero-copy {
+      font-size: 11px;
+    }
+
+    .abhay-hero-primary {
+      min-height: 42px;
+      font-size: 12px;
+    }
+
+    .abhay-bottom-cta {
+      padding: 0 28px;
+      gap: 54px;
+    }
+    .abhay-rank strong{
+        padding-left: 97px;
+        padding-top: 33px;
+        font-size: large;
+        margin-top: -26px;
+    
+    } 
+    .abhay-rank span {
+        font-size: 9px;
+        line-height: 13px;
+        padding-left: 3px;
+        padding-top: 2px;
+    }
+     .abhay-category-menu a {
+        width: 120px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 7px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+    .abhay-category-menu {
+        position: absolute;
+        top: 39px;
+        left: 142px;
+        z-index: 20;
+        width: 145px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+    .abhay-submenu {
+        position: absolute;
+        top: -1px !important;
+        left: 129px !important;
+        z-index: 24;
+        width: 518px;
+        display: none;
+        width: fit-content;
+    }
+  }
+
+
+   @media (max-width:642px){
+
+  .abhay-launch-strip{
+      gap: 4px;
+  }
+
+  .abhay-header-pill{
+      font-size: 10px;
+      padding: 4px 8px;
+  }
+
+  }
+
+@media (max-width:480px){
+  .abhay-abhasu-grid{grid-template-columns:1fr;}
+
+     .abhay-contact-bar {
+        height: 25px;
+        gap: 16px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+    .ab-number{
+      display: none;
+    }
+
+    .ab-number-sec{
+      display: block;
+    }
+  }
+@media (prefers-reduced-motion: reduce){
+  .abhay-abhasu-panel, .abhay-abhasu-card, .abhay-abhasu-overlay, .abhay-abhasu-caret{transition:none; animation:none;}
+}
+
+.abhay-abhasu-card{
+    width:100%;
+    min-width:0;
+}
+
+.abhay-abhasu-card-top{
+    min-width:0;
+}
+@keyframes abhasuFadeIn{
+  from{opacity:0; transform:translateY(4px);}
+  to{opacity:1; transform:translateY(0);}
+}
+@media (max-width:480px){
+  .abhay-training-card-container{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:420px){
+  /* Quick-actions se Career Guidance chhupao */
+  .abhay-quick-actions .abhay-quick-btn:last-child{
+    display:none;
+  }
+
+  /* Dropdown ke andar wapas dikhao */
+  .abhay-primary-nav .abhay-career-link{
+    display:block;
+  }
+      .abhay-contact-bar {
+        height: 25px;
+        gap: 9px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }
+ .abhay-category-menu {
+        position: absolute;
+        top: 74px;
+        left: 44px;
+        z-index: 20;
+        width: 145px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+       .abhay-category-menu a {
+        width: 126px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3px;
+        border-radius: 4px;
+        background: var(--orange);
+        color: #fff;
+        font-size: 8px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, .28);
+        transition: filter 160ms ease, transform 160ms ease;
+    }
+}
+
+
+@media(max-width:400px){
+    .abhay-category-btn {
+        height: 24px;
+        width: 93px;
+        border-radius: 4px;
+        margin-left: 132px;
+        font-size: 8px;
+        margin-top: 41px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+    .abhay-category-icon {
+        flex-shrink: 0;
+        color: #fff;
+        width: 16px;
+        margin-left: -2px;
+    }
+  }
+  @media(max-width:350px){
+    .abhay-category-btn {
+        height: 24px;
+        width: 93px;
+        border-radius: 4px;
+        margin-left: 132px;
+        font-size: 8px;
+        margin-top: 41px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+    .abhay-category-icon {
+        flex-shrink: 0;
+        color: #fff;
+        width: 16px;
+        margin-left: -2px;
+    }
+    .abhay-rank span {
+        font-size: 7px;
+        width: 66px;
+        line-height: 11px;
+        padding-left: 0px;
+        padding-top: 2px;
+    }
+
+        .abhay-contact-bar {
+        height: 25px;
+        gap: 8px;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+        font-size: clamp(9px, .86vw, 18px);
+        line-height: 18px;
+        font-weight: 500;
+    }  
+        .abhay-rank strong {
+        padding-left: 89px;
+        padding-top: 30px;
+        font-size: large;
+        margin-top: -26px;
+    } 
+
+
+  }
+
+  @media(max-width:310px){
+   .abhay-category-btn {
+        height: 26px;
+        width: 83px;
+        border-radius: 4px;
+        margin-left: 85px;
+        font-size: 7px;
+        margin-top: 38px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+    .abhay-contact-bar
+
+ {
+    height: 25px;
+    gap: 6px;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #000;
+    font-size: clamp(9px, .86vw, 18px);
+    line-height: 18px;
+    font-weight: 500;
+}
+    .abhay-category-menu {
+        position: absolute;
+        top: 74px;
+        left: 25px;
+        z-index: 20;
+        width: 145px;
+        display: none;
+        padding: 0;
+        border-radius: 4px;
+        background: transparent;
+    }
+    
+
+  }
+
+  @media (max-width: 780px) {
+  .abhay-desktop-numbers {
+    display: none;
+  }
+  .phone-dropdown {
+    display: inline-block;
+  }
+}
