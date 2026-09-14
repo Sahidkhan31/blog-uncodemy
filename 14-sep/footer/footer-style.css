@@ -1,0 +1,1045 @@
+#UnCodeMy-Footer {
+  --ftr-bg: #101010;
+  --ftr-white: #ffffff;
+  --ftr-soft: #f3f3f3;
+  --ftr-muted: #777777;
+  --ftr-orange: #ff561f;
+  --ftr-orange-dark: #df3d0c;
+  --ftr-green: #168d21;
+  --ftr-light-green: #65bd22;
+  --ftr-trust: #00b67a;
+  --ftr-blue: #18b8ff;
+  --ftr-pink: #ff2e8b;
+  --ftr-teal: #244f4c;
+  --ftr-purple: #8430aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#UnCodeMy-Footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #101010 !important;
+  color: #ffffff !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#UnCodeMy-Footer * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#UnCodeMy-Footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#UnCodeMy-Footer .Hemank-page,
+#UnCodeMy-Footer .Hemank-footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #101010 !important;
+}
+
+#UnCodeMy-Footer .Hemank-footer {
+  display: block;
+}
+
+.Hemank-footer-top {
+  padding: 34px 24px 15px;
+}
+
+.Hemank-footer-wrap {
+  width: min(100%, 1760px);
+  margin: 0 auto;
+}
+
+.Hemank-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 440px) minmax(0, 260px) minmax(0, 260px);
+  justify-content: space-between;
+  gap: 56px 40px;
+}
+
+#UnCodeMy-Footer h2 {
+  margin: 0;
+  color: var(--ftr-soft);
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.Hemank-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 24px;
+}
+
+.Hemank-brand-mark span:first-child {
+  border-right: 1px solid #ececec;
+}
+
+.Hemank-brand-name {
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.Hemank-about-text {
+  width: 100%;
+  max-width: 312px;
+  margin: 0 0 18px;
+  color: var(--ftr-soft);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.Hemank-social-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 5px;
+}
+
+.Hemank-social-link {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  color: var(--ftr-white);
+  font-size: 17px;
+  font-weight: 900;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.Hemank-social-link:hover,
+.Hemank-promo-card:hover,
+.Hemank-contact-card:hover,
+.Hemank-links-col a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.Hemank-social-fb {
+  border: 2px solid var(--ftr-white);
+  border-radius: 50%;
+  font-family: Georgia, serif;
+}
+
+.Hemank-social-in {
+  border-radius: 4px;
+  background: #0a78b6;
+  font-size: 15px;
+}
+
+.Hemank-social-ig {
+  border-radius: 7px;
+  background: linear-gradient(135deg, #654dff, #e34086 58%, #f9a12d);
+  font-size: 11px;
+}
+
+.Hemank-certified {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.Hemank-partner-card,
+.Hemank-award-card,
+.Hemank-trust-card {
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--ftr-white);
+  color: #202020;
+}
+
+.Hemank-partner-card {
+  width: 100%;
+  max-width: 304px;
+  min-height: 70px;
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr); */
+  align-items: center;
+  gap: 6px;
+  /* padding: 10px 12px; */
+  margin-bottom: 14px;
+}
+
+.Hemank-partner-card span {
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.Hemank-partner-card span:nth-child(2) {
+  color: #bd2636;
+  font-size: 14px;
+}
+
+.Hemank-partner-card span:nth-child(3) {
+  color: #3f72d6;
+}
+
+.Hemank-award-card {
+  width: 100%;
+  max-width: 350px;
+  height: 73px;
+  gap: 7px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.Hemank-award-card img {
+  width: 100%;
+  height: 99%;
+}
+
+.Hemank-award-card span {
+  display: grid;
+  place-items: center;
+  color: #202020;
+  font-size: 7px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.Hemank-award-card b {
+  width: 37px;
+  height: 37px;
+  margin-bottom: 3px;
+  border-radius: 50%;
+  background: #ffc82d;
+  color: var(--ftr-white);
+  font-size: 29px;
+  line-height: 41px;
+}
+
+.Hemank-rating-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Hemank-trust-card {
+  width: 100%;
+  max-width: 172px;
+  height: 73px;
+}
+
+.Hemank-trust-title {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  gap: 2px;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.Hemank-trust-title span {
+  color: var(--ftr-trust);
+  font-size: 44px;
+  line-height: 1;
+}
+
+.Hemank-trust-stars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.Hemank-trust-stars span {
+  display: grid;
+  place-items: center;
+  height: 28px;
+  background: var(--ftr-trust);
+  color: var(--ftr-white);
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.Hemank-contact-card {
+  width: 100%;
+  max-width: 170px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 6px;
+  /* padding: 7px 12px; */
+  border-radius: 9px;
+  /* background: var(--ftr-light-green); */
+  /* color: var(--ftr-white); */
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.08;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.Hemank-contact-card span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--ftr-white);
+  color: var(--ftr-light-green);
+  font-size: 11px;
+}
+
+.Hemank-contact-col h2,
+.Hemank-links-col h2,
+.Hemank-payment-col h2 {
+  margin-bottom: 8px;
+}
+
+.Hemank-contact-group {
+  display: grid;
+  gap: 16px;
+}
+
+.Hemank-contact-group.Hemank-small {
+  gap: 18px;
+}
+
+.Hemank-contact-item {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  gap: 15px;
+  align-items: start;
+  min-height: 24px;
+  color: var(--ftr-white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.Hemank-contact-item p {
+  margin: 0;
+}
+
+.Hemank-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 24px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.Hemank-globe {
+  color: var(--ftr-blue);
+  font-size: 18px;
+}
+
+.Hemank-phone {
+  color: var(--ftr-pink);
+}
+
+.Hemank-mail {
+  color: #f4d5f0;
+  font-size: 18px;
+}
+
+.Hemank-divider {
+  width: 100%;
+  max-width: 360px;
+  height: 1px;
+  margin: 18px 0 17px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.Hemank-links-col ul {
+  display: grid;
+  gap: 16px;
+  margin: 13px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Hemank-links-col a {
+  position: relative;
+  display: inline-block;
+  padding-left: 29px;
+  color: var(--ftr-white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: transform 160ms ease, filter 160ms ease, color 160ms ease;
+}
+
+.Hemank-links-col a::before {
+  content: "⇨";
+  font-size: 27px;
+  color: rgb(255, 84, 33);
+  margin-right: 10px;
+  align-items: center;
+}
+
+.Hemank-links-col a:hover {
+  color: #ff7d4a;
+}
+
+.Hemank-payment-col p {
+  margin: 0 0 14px;
+  color: var(--ftr-white);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.Hemank-payment-methods {
+  display: grid;
+  /* grid-template-columns: repeat(6, 1fr); */
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.Hemank-payment-methods span {
+  display: grid;
+  place-items: center;
+  height: 26px;
+  border-radius: 4px;
+  background: var(--ftr-white);
+  color: #174471;
+  font-size: 9px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.Hemank-payment-methods span:nth-child(2) {
+  color: #d82920;
+}
+
+.Hemank-payment-methods span:nth-child(4) {
+  color: #a51c76;
+}
+
+.Hemank-payment-methods span:nth-child(5) {
+  color: #1785b4;
+}
+
+.Hemank-promo-card {
+  width: 100%;
+  max-width: 215px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  color: var(--ftr-white);
+  text-align: center;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.Hemank-promo-card strong {
+  font-weight: 900;
+}
+
+.Hemank-promo-card.is-active {
+  transform: scale(0.98);
+}
+
+.Hemank-fee-card {
+  background: linear-gradient(180deg, #81cc35, #43a81a);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.Hemank-fee-card span {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 42px;
+  transform: rotate(-12deg);
+  border-radius: 4px;
+  background: var(--ftr-white);
+  color: #43a81a;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.Hemank-whatsapp-card {
+  justify-content: flex-start;
+  /* padding-left: 15px; */
+  /* width: 200px; */
+  background: var(--ftr-teal);
+  font-size: 20px;
+}
+
+.Hemank-whatsapp-card span,
+.Hemank-demo-card span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  border: 4px solid var(--ftr-white);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.Hemank-demo-card {
+  background: linear-gradient(180deg, #a338a6, #702ca7);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.Hemank-placement-card {
+  height: 72px;
+  background: linear-gradient(135deg, #ffffff, #e8f4fb 45%, #ffffff);
+  color: #99cbe1;
+  font-size: 27px;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 0 rgba(102, 154, 174, 0.35);
+}
+
+.Hemank-course-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.68);
+  background: var(--ftr-bg);
+}
+
+.Hemank-course-wrap {
+  padding: 15px 10px 0;
+}
+
+.Hemank-students-zone h2,
+.Hemank-city-pages h2 {
+  font-size: 22px;
+}
+
+.Hemank-students-zone h2 {
+  margin-bottom: 5px;
+}
+
+.Hemank-city-pages {
+  margin-top: 33px;
+}
+
+.Hemank-city-pages h2 {
+  margin-bottom: 14px;
+}
+
+.Hemank-city-row {
+  margin: 0 0 14px;
+}
+
+.Hemank-city-row h3 {
+  margin: 0 0 12px;
+  color: var(--ftr-soft);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.Hemank-text-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Hemank-text-links a {
+  position: relative;
+  display: inline-block;
+  margin: 0 9px 0 4px;
+  color: var(--ftr-white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  transition: color 160ms ease;
+}
+
+.Hemank-text-links a::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -7px;
+  width: 2px;
+  height: 14px;
+  background: var(--ftr-orange);
+}
+
+.Hemank-text-links a:hover {
+  color: #ff7d4a;
+}
+
+.Hemank-copyright-section {
+  min-height: 40px;
+  margin-bottom: 35px;
+  padding: 0px 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #696969;
+  /* justify-content: center; */
+}
+
+.Hemank-copyright-section p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  align-items: center;
+  justify-content: center;
+}
+
+.Hemank-copyright-section strong {
+  color: var(--ftr-white);
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.Hemank-desktop-cta {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  height: 35px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--ftr-orange);
+  box-shadow: 0 -2px 9px rgba(0, 0, 0, 0.35);
+}
+
+.Hemank-desktop-cta a {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(120, 28, 0, 0.22);
+  color: var(--ftr-white);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  transition: background 160ms ease;
+}
+
+.Hemank-desktop-cta a:hover,
+.Hemank-desktop-cta a.is-active {
+  background: var(--ftr-orange-dark);
+}
+
+.Hemank-mobile-cta {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .Hemank-footer-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px 32px;
+  }
+
+  .Hemank-footer-grid>div {
+    min-width: 0;
+  }
+
+  .Hemank-copyright-section {
+    padding: 0 6%;
+  }
+
+  .Hemank-rating-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .Hemank-footer-wrap {
+    width: 100%;
+  }
+
+  .Hemank-footer-top {
+    padding: 30px 16px 15px;
+  }
+}
+
+@media (max-width: 760px) {
+
+
+  .Hemank-footer-top {
+    padding: 28px 18px 15px;
+  }
+
+  .Hemank-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .Hemank-about-text,
+  .Hemank-partner-card,
+  .Hemank-award-card,
+  .Hemank-divider,
+
+  .Hemank-rating-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .Hemank-contact-card {
+    margin-left: 10px;
+  }
+
+  .Hemank-payment-methods {
+    max-width: 360px;
+  }
+
+  .Hemank-course-wrap {
+    padding: 16px 12px 0;
+  }
+
+  .Hemank-city-pages {
+    margin-top: 26px;
+  }
+
+  .Hemank-copyright-section {
+    min-height: 102px;
+    padding: 12px 22px 46px;
+    display: grid;
+    place-items: center;
+    gap: 4px;
+    text-align: center;
+    justify-content: center;
+    color: #777;
+  }
+
+  .Hemank-copyright-section p {
+    font-size: 17px;
+  }
+
+  .Hemank-copyright-section p:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .Hemank-copyright-section p:nth-child(3) {
+    margin-top: 24px;
+    font-size: 16px;
+  }
+
+
+
+
+}
+
+.Hemank-mobile-cta a {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  background: var(--ftr-green);
+  color: var(--ftr-white);
+  font-size: 17px;
+  font-weight: 900;
+  text-align: center;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.Hemank-mobile-cta a.is-active {
+  filter: brightness(0.92);
+}
+
+.Hemank-mobile-whatsapp {
+  border-top-right-radius: 3px;
+}
+
+.Hemank-mobile-call {
+  border-top-left-radius: 3px;
+}
+
+.Hemank-support-avatar {
+  position: relative;
+  place-self: end center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  background: #41c9b6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Hemank-avatar-head {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  width: 21px;
+  height: 24px;
+  border-radius: 48% 48% 42% 42%;
+  background: #f3bc73;
+}
+
+.Hemank-avatar-body {
+  position: absolute;
+  right: 13px;
+  bottom: 8px;
+  left: 13px;
+  height: 21px;
+  border-radius: 16px 16px 5px 5px;
+  background: #253d55;
+}
+
+.Hemank-avatar-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 13px;
+  width: 9px;
+  height: 15px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.Hemank-avatar-headset {
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  width: 32px;
+  height: 27px;
+  border: 4px solid #56606c;
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.Hemank-avatar-headset::before,
+.Hemank-avatar-headset::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 8px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--ftr-orange);
+}
+
+.Hemank-avatar-headset::before {
+  left: -7px;
+}
+
+.Hemank-avatar-headset::after {
+  right: -7px;
+}
+
+
+@media (max-width: 420px) {
+  .Hemank-brand-name {
+    font-size: 28px;
+  }
+
+  .Hemank-partner-card,
+  .Hemank-award-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Hemank-payment-methods {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .Hemank-whatsapp-card {
+    font-size: 22px;
+  }
+}
+
+.Hemank-brand-mark img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+#UnCodeMy-Footer .ftr-icon {
+  width: 15px;
+  height: 24px;
+  vertical-align: -2px;
+  color: white;
+}
+
+#UnCodeMy-Footer .mr-2 {
+  margin-right: 8px;
+}
+
+.demo-content {
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bottom-navbar {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 420px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 10px;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  color: #8a8a8a;
+  font-size: 11px;
+  flex: 1;
+  padding: 8px 4px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  stroke: #8a8a8a;
+  fill: none;
+  stroke-width: 1.8;
+  transition: stroke 0.2s ease;
+}
+
+.nav-item.active {
+  color: #ff6a1a;
+  background: #fff1e8;
+}
+
+.nav-item.active svg {
+  stroke: #ff6a1a;
+}
+
+.nav-item.center {
+  background: transparent;
+  padding: 0;
+  margin-top: -28px;
+}
+
+.nav-item.center .center-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff7a2e, #ff5a1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(255, 90, 26, 0.4);
+}
+
+.nav-item.center .center-btn svg {
+  stroke: #fff;
+  width: 24px;
+  height: 24px;
+}
+
+.nav-item.center span {
+  margin-top: 4px;
+  color: #f8f5f5;
+}
+
+@media (max-width: 380px) {
+  .bottom-navbar {
+    width: calc(100% - 14px);
+    padding: 6px 4px;
+  }
+
+  .nav-item {
+    font-size: 10px;
+  }
+
+  .nav-item.center .center-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.abhay-white {
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.bottom-navbar {
+  display: none;
+}
+
+@media(max-width:500px) {
+
+
+  .Hemank-copyright-section p:nth-child(3) {
+    margin-top: 2px;
+    font-size: 13px;
+  }
+
+  .Hemank-copyright-section {
+    margin-bottom: 80px;
+    min-height: 102px;
+    padding: 12px 22px 46px;
+    display: grid;
+    place-items: center;
+    gap: 4px;
+    text-align: center;
+    justify-content: center;
+    color: #777;
+  }
+
+  .bottom-navbar {
+    display: flex;
+    width: 421px;
+    height: 55px;
+  }
+
+  .bottom-navbar {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 420px;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0px;
+    z-index: auto;
+  }
+
+  .Hemank-desktop-cta {
+    display: none;
+  }
+
+  .nav-item {
+    color: black !important;
+  }
+
+  .Hemank-footer {
+    padding-bottom: 0 !important;
+  }
+
+}
+
+@media(max-width:560px) and (min-width:500px) {
+  .Hemank-desktop-cta a {
+    font-size: 10px;
+
+
+  }
+
+}

@@ -111,6 +111,7 @@
 <body
     class="bg-white text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-orange-500 selection:text-white">
 
+<<<<<<< HEAD
     <!-- TOP HEADER -->
     <header class="pt-8 pb-4 text-center px-4 max-w-7xl mx-auto w-full">
         <div
@@ -126,10 +127,13 @@
         </p>
     </header>
 
+=======
+>>>>>>> f96933224062c74ac0895301c42c56cd408805dd
     <!-- SEARCH, FILTERS & CAROUSEL NAVIGATION CONTROLS -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 w-full">
         <div class="bg-white p-4 rounded-2xl border border-orange-200 compact-shadow space-y-3">
 
+<<<<<<< HEAD
             <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <!-- Search Input Box -->
                 <div class="relative w-full">
@@ -183,6 +187,22 @@
                         <option value="ALL">All Mentors</option>
                     </select>
                 </div>
+=======
+            
+
+            <div>
+                <select id="filter-tech"
+                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
+                    <option value="ALL">All Technologies</option>
+                </select>
+            </div>
+
+            <div>
+                <select id="filter-mentor"
+                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
+                    <option value="ALL">All Mentors</option>
+                </select>
+>>>>>>> f96933224062c74ac0895301c42c56cd408805dd
             </div>
         </div>
     </section>
@@ -225,7 +245,48 @@
     </main>
 
     <!-- VIEW DETAILS MODAL -->
+<<<<<<< HEAD
    
+=======
+    <div id="student-modal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-xs transition-opacity">
+        <div
+            class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden border-2 border-orange-500 max-h-[90vh] flex flex-col">
+
+            <!-- Modal Header -->
+            <div class="orange-gradient-btn p-4 text-white flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-2.5">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-white/20 text-white flex items-center justify-center font-black text-sm">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black leading-tight">Full Student & Project Profile</h3>
+                        <p class="text-[10px] text-orange-100">Complete student breakdown & mentor assignments</p>
+                    </div>
+                </div>
+                <button onclick="closeStudentModal()"
+                    class="w-7 h-7 rounded-lg bg-white/20 text-white hover:bg-white hover:text-orange-600 flex items-center justify-center transition text-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div id="modal-body-content" class="p-4 sm:p-5 overflow-y-auto space-y-4">
+                <!-- Dynamic Content injected on click -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-3 border-t border-orange-100 bg-orange-50/30 flex justify-end shrink-0">
+                <button onclick="closeStudentModal()"
+                    class="px-4 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-orange-600 transition shadow">
+                    Close Profile
+                </button>
+            </div>
+        </div>
+    </div>
+
+>>>>>>> f96933224062c74ac0895301c42c56cd408805dd
     <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
         /* ==========================================================================
@@ -329,9 +390,395 @@
                         }
                     }
                 ]
+<<<<<<< HEAD
             }
         ];
 
+=======
+            },
+            {
+                id: "std-101",
+                name: "Prasang Singh",
+                photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+                title: "Java Full Stack Developer",
+                course: "Java Full Stack Diploma",
+                institute: "Uncodemy Institute",
+                about: "Focused on building scalable Java microservices, REST APIs, and clean frontend web components.",
+                skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML/CSS"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Student Management System",
+                        description: "Full-stack web app for managing student enrollment records, attendance logging, and report card exports.",
+                        technologies: ["Java", "Spring Boot", "MySQL", "Tailwind"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Rahul Sharma",
+                            photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+                            designation: "Lead Technical Architect",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    },
+                    {
+                        name: "Order Processing Service",
+                        description: "Microservice API performing checkout validations and database transactions.",
+                        technologies: ["Java", "Spring", "PostgreSQL"],
+                        github: "https://github.com",
+                        liveDemo: "",
+                        mentor: {
+                            name: "Dr. Ananya Verma",
+                            photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+                            designation: "Senior Java Instructor",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+             {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+             {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+             {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            {
+                id: "std-102",
+                name: "Ananya Roy",
+                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+                title: "Frontend & UI Trainee",
+                course: "Web Development Master",
+                institute: "Uncodemy Academy",
+                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+                github: "https://github.com",
+                linkedin: "https://linkedin.com",
+                projects: [
+                    {
+                        name: "Team Velocity Dashboard",
+                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+                        technologies: ["React", "Chart.js", "Tailwind CSS"],
+                        github: "https://github.com",
+                        liveDemo: "https://example.com",
+                        mentor: {
+                            name: "Vikram Malhotra",
+                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                            designation: "Frontend Specialist",
+                            organization: "Uncodemy",
+                            linkedin: "https://linkedin.com"
+                        }
+                    }
+                ]
+            },
+            
+        ];
+        console.log(STUDENT_DATA.length);
+        
+>>>>>>> f96933224062c74ac0895301c42c56cd408805dd
         /* Initialize Page Elements */
         document.addEventListener('DOMContentLoaded', () => {
             populateFilterOptions();
@@ -469,11 +916,17 @@
                                 ${student.github ? `<a href="${student.github}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-slate-700 hover:bg-slate-900 hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-github"></i></a>` : ''}
                                 ${student.linkedin ? `<a href="${student.linkedin}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-orange-600 hover:bg-[#0A66C2] hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-linkedin"></i></a>` : ''}
                             </div>
+<<<<<<< HEAD
                           <a href="student-details.html?id=${student.id}"
    target="_blank"
    class="px-3 py-1.5 rounded-xl orange-gradient-btn text-white text-[11px] font-bold transition shadow hover:opacity-95 inline-block">
     View Full Details
 </a>
+=======
+                            <button onclick="openStudentModal('${student.id}')" class="px-3 py-1.5 rounded-xl orange-gradient-btn text-white text-[11px] font-bold transition shadow hover:opacity-95">
+                                View Full Details
+                            </button>
+>>>>>>> f96933224062c74ac0895301c42c56cd408805dd
                         </div>
                     </div>
                 `;
