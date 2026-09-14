@@ -1,793 +1,841 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uncodemy Project Showcase</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandOrange: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            200: '#fed7aa',
-                            500: '#ff6600',
-                            600: '#ea580c',
-                            700: '#c2410c',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandOrange: {
+                50: "#fff7ed",
+                100: "#ffedd5",
+                200: "#fed7aa",
+                500: "#ff6600",
+                600: "#ea580c",
+                700: "#c2410c",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <!-- FontAwesome & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        body {
-            background-color: #ffffff;
-            color: #0f172a;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+      body {
+        background-color: #ffffff;
+        color: #0f172a;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Custom Orange Horizontal Scrollbar */
+      .horizontal-carousel {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #ff6600 #ffedd5;
+      }
+
+      .horizontal-carousel::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .horizontal-carousel::-webkit-scrollbar-track {
+        background: #ffedd5;
+        border-radius: 9999px;
+      }
+
+      .horizontal-carousel::-webkit-scrollbar-thumb {
+        background: #ff6600;
+        border-radius: 9999px;
+      }
+
+      /* Subtle Card Shadows */
+      .compact-shadow {
+        box-shadow:
+          0 4px 20px -2px rgba(255, 102, 0, 0.08),
+          0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      }
+
+      .orange-gradient-btn {
+        background: linear-gradient(135deg, #ff6600 0%, #ea580c 100%);
+      }
+
+      .orange-gradient-btn:hover {
+        background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      }
+
+      /* Continuous Horizontal Auto-Scroll Keyframes */
+      @keyframes scrollMarquee {
+        0% {
+          transform: translateX(0);
         }
 
-        /* Custom Orange Horizontal Scrollbar */
-        .horizontal-carousel {
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: #ff6600 #ffedd5;
+        100% {
+          transform: translateX(-50%);
         }
+      }
 
-        .horizontal-carousel::-webkit-scrollbar {
-            height: 6px;
-        }
+      .animate-auto-scroll {
+        display: flex;
+        width: max-content;
+        animation: scrollMarquee 38s linear infinite;
+      }
 
-        .horizontal-carousel::-webkit-scrollbar-track {
-            background: #ffedd5;
-            border-radius: 9999px;
-        }
+      /* Pause horizontal scrolling movement when user hovers */
+      .carousel-track-container:hover .animate-auto-scroll {
+        animation-play-state: paused !important;
+      }
 
-        .horizontal-carousel::-webkit-scrollbar-thumb {
-            background: #ff6600;
-            border-radius: 9999px;
-        }
-
-        /* Subtle Card Shadows */
-        .compact-shadow {
-            box-shadow: 0 4px 20px -2px rgba(255, 102, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
-        }
-
-        .orange-gradient-btn {
-            background: linear-gradient(135deg, #ff6600 0%, #ea580c 100%);
-        }
-
-        .orange-gradient-btn:hover {
-            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-        }
-
-        /* Continuous Horizontal Auto-Scroll Keyframes */
-        @keyframes scrollMarquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .animate-auto-scroll {
-            display: flex;
-            width: max-content;
-            animation: scrollMarquee 38s linear infinite;
-        }
-
-        /* Pause horizontal scrolling movement when user hovers */
-        .carousel-track-container:hover .animate-auto-scroll {
-            animation-play-state: paused !important;
-        }
-
-        /* Line clamping for compact card views */
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+      /* Line clamping for compact card views */
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
     </style>
-</head>
+  </head>
 
-<body
-    class="bg-white text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-orange-500 selection:text-white">
-
-    <!-- SEARCH, FILTERS & CAROUSEL NAVIGATION CONTROLS -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 w-full">
-        <div class="bg-white p-4 rounded-2xl border border-orange-200 compact-shadow space-y-3">
-
-            <div>
-                <select id="filter-course"
-                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                    <option value="ALL">All Courses</option>
-                </select>
-            </div>
-
-            <div>
-                <select id="filter-tech"
-                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                    <option value="ALL">All Technologies</option>
-                </select>
-            </div>
-
-            <div>
-                <select id="filter-mentor"
-                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                    <option value="ALL">All Mentors</option>
-                </select>
-            </div>
-        </div>
-    </section>
-
+  <body
+    class="bg-white text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-orange-500 selection:text-white"
+  >
     <!-- MAIN HORIZONTAL AUTO-SCROLL SHOWCASE SECTION -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 w-full">
-
-        <div class="flex items-center justify-between mb-3 px-1">
-            <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
-                <span class="text-xs font-black uppercase tracking-wider text-slate-700">Trainee Profiles
-                    Directory</span>
-            </div>
-            <span class="text-[11px] font-bold text-slate-400">Showing <span id="results-count"
-                    class="text-orange-600 font-extrabold">0</span> Cards</span>
+    <main
+      class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 w-full mt-4"
+    >
+      <!-- Continuous Auto-Scrolling Track -->
+      <div
+        id="students-carousel-wrapper"
+        class="carousel-track-container horizontal-carousel overflow-x-auto py-2 px-1 rounded-2xl"
+      >
+        <div
+          id="students-carousel-track"
+          class="animate-auto-scroll flex gap-4"
+        >
+          <!-- Compact Student Profile Cards rendered dynamically via JavaScript -->
         </div>
+      </div>
 
-        <!-- Continuous Auto-Scrolling Track -->
-        <div id="students-carousel-wrapper"
-            class="carousel-track-container horizontal-carousel overflow-x-auto py-2 px-1 rounded-2xl">
-            <div id="students-carousel-track" class="animate-auto-scroll flex gap-4">
-                <!-- Compact Student Profile Cards rendered dynamically via JavaScript -->
-            </div>
+      <!-- Empty Search View -->
+      <div
+        id="no-students-view"
+        class="hidden text-center py-12 bg-white rounded-2xl border border-orange-200 compact-shadow space-y-3"
+      >
+        <div
+          class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xl mx-auto"
+        >
+          <i class="fas fa-search-minus"></i>
         </div>
-
-        <!-- Empty Search View -->
-        <div id="no-students-view"
-            class="hidden text-center py-12 bg-white rounded-2xl border border-orange-200 compact-shadow space-y-3">
-            <div
-                class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xl mx-auto">
-                <i class="fas fa-search-minus"></i>
-            </div>
-            <h3 class="text-sm font-bold text-slate-800">No matching student profiles found</h3>
-            <p class="text-xs text-slate-500 max-w-xs mx-auto">Try adjusting your search criteria or filter options.</p>
-            <button onclick="resetFilters()"
-                class="px-4 py-1.5 rounded-xl orange-gradient-btn text-white text-xs font-bold shadow">Reset All
-                Filters</button>
-        </div>
-
+        <h3 class="text-sm font-bold text-slate-800">
+          No matching student profiles found
+        </h3>
+        <p class="text-xs text-slate-500 max-w-xs mx-auto">
+          Try adjusting your search criteria or filter options.
+        </p>
+        <button
+          onclick="resetFilters()"
+          class="px-4 py-1.5 rounded-xl orange-gradient-btn text-white text-xs font-bold shadow"
+        >
+          Reset All Filters
+        </button>
+      </div>
     </main>
 
     <!-- VIEW DETAILS MODAL -->
-    <div id="student-modal"
-        class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-xs transition-opacity">
+    <div
+      id="student-modal"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-xs transition-opacity"
+    >
+      <div
+        class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden border-2 border-orange-500 max-h-[90vh] flex flex-col"
+      >
+        <!-- Modal Header -->
         <div
-            class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden border-2 border-orange-500 max-h-[90vh] flex flex-col">
-
-            <!-- Modal Header -->
-            <div class="orange-gradient-btn p-4 text-white flex items-center justify-between shrink-0">
-                <div class="flex items-center gap-2.5">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-white/20 text-white flex items-center justify-center font-black text-sm">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-black leading-tight">Full Student & Project Profile</h3>
-                        <p class="text-[10px] text-orange-100">Complete student breakdown & mentor assignments</p>
-                    </div>
-                </div>
-                <button onclick="closeStudentModal()"
-                    class="w-7 h-7 rounded-lg bg-white/20 text-white hover:bg-white hover:text-orange-600 flex items-center justify-center transition text-sm">
-                    <i class="fas fa-times"></i>
-                </button>
+          class="orange-gradient-btn p-4 text-white flex items-center justify-between shrink-0"
+        >
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-lg bg-white/20 text-white flex items-center justify-center font-black text-sm"
+            >
+              <i class="fas fa-user-graduate"></i>
             </div>
-
-            <!-- Modal Content -->
-            <div id="modal-body-content" class="p-4 sm:p-5 overflow-y-auto space-y-4">
-                <!-- Dynamic Content injected on click -->
+            <div>
+              <h3 class="text-sm font-black leading-tight">
+                Full Student & Project Profile
+              </h3>
+              <p class="text-[10px] text-orange-100">
+                Complete student breakdown & mentor assignments
+              </p>
             </div>
-
-            <!-- Modal Footer -->
-            <div class="p-3 border-t border-orange-100 bg-orange-50/30 flex justify-end shrink-0">
-                <button onclick="closeStudentModal()"
-                    class="px-4 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-orange-600 transition shadow">
-                    Close Profile
-                </button>
-            </div>
+          </div>
+          <button
+            onclick="closeStudentModal()"
+            class="w-7 h-7 rounded-lg bg-white/20 text-white hover:bg-white hover:text-orange-600 flex items-center justify-center transition text-sm"
+          >
+            <i class="fas fa-times"></i>
+          </button>
         </div>
+
+        <!-- Modal Content -->
+        <div
+          id="modal-body-content"
+          class="p-4 sm:p-5 overflow-y-auto space-y-4"
+        >
+          <!-- Dynamic Content injected on click -->
+        </div>
+
+        <!-- Modal Footer -->
+        <div
+          class="p-3 border-t border-orange-100 bg-orange-50/30 flex justify-end shrink-0"
+        >
+          <button
+            onclick="closeStudentModal()"
+            class="px-4 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-orange-600 transition shadow"
+          >
+            Close Profile
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
-        /* ==========================================================================
+      /* ==========================================================================
            CENTRALIZED STUDENT DATASET (Modify or add new records here)
            ========================================================================== */
-        const STUDENT_DATA = [
+      const STUDENT_DATA = [
+        {
+          id: "std-101",
+          name: "Prasang Singh",
+          photo:
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+          title: "Java Full Stack Developer",
+          course: "Java Full Stack Diploma",
+          institute: "Uncodemy Institute",
+          about:
+            "Focused on building scalable Java microservices, REST APIs, and clean frontend web components.",
+          skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML/CSS"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-101",
-                name: "Prasang Singh",
-                photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-                title: "Java Full Stack Developer",
-                course: "Java Full Stack Diploma",
-                institute: "Uncodemy Institute",
-                about: "Focused on building scalable Java microservices, REST APIs, and clean frontend web components.",
-                skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML/CSS"],
-                github: "https://github.com",
+              name: "Student Management System",
+              description:
+                "Full-stack web app for managing student enrollment records, attendance logging, and report card exports.",
+              technologies: ["Java", "Spring Boot", "MySQL", "Tailwind"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Rahul Sharma",
+                photo:
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+                designation: "Lead Technical Architect",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Student Management System",
-                        description: "Full-stack web app for managing student enrollment records, attendance logging, and report card exports.",
-                        technologies: ["Java", "Spring Boot", "MySQL", "Tailwind"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Rahul Sharma",
-                            photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-                            designation: "Lead Technical Architect",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    },
-                    {
-                        name: "Order Processing Service",
-                        description: "Microservice API performing checkout validations and database transactions.",
-                        technologies: ["Java", "Spring", "PostgreSQL"],
-                        github: "https://github.com",
-                        liveDemo: "",
-                        mentor: {
-                            name: "Dr. Ananya Verma",
-                            photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-                            designation: "Senior Java Instructor",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Order Processing Service",
+              description:
+                "Microservice API performing checkout validations and database transactions.",
+              technologies: ["Java", "Spring", "PostgreSQL"],
+              github: "https://github.com",
+              liveDemo: "",
+              mentor: {
+                name: "Dr. Ananya Verma",
+                photo:
+                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+                designation: "Senior Java Instructor",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
+            },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
+            {
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
+                linkedin: "https://linkedin.com",
+              },
+            },
+          ],
+        },
+        {
+          id: "std-103",
+          name: "Aarav Patel",
+          photo:
+            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+          title: "Python Data Science Student",
+          course: "Data Science & ML",
+          institute: "Uncodemy Campus",
+          about:
+            "Specialized in data analytics, machine learning predictive models, and web backend scripting with Flask.",
+          skills: ["Python", "Flask", "Pandas", "SQL", "Scikit-Learn"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
+            {
+              name: "Housing Price Valuation ML",
+              description:
+                "Predictive model calculating estimated real estate valuations based on regional data points.",
+              technologies: ["Python", "Flask", "Scikit-Learn"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Dr. Ananya Verma",
+                photo:
+                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+                designation: "Senior Java Instructor",
+                organization: "Uncodemy",
+                linkedin: "https://linkedin.com",
+              },
+            },
+          ],
+        },
+        {
+          id: "std-101",
+          name: "Prasang Singh",
+          photo:
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+          title: "Java Full Stack Developer",
+          course: "Java Full Stack Diploma",
+          institute: "Uncodemy Institute",
+          about:
+            "Focused on building scalable Java microservices, REST APIs, and clean frontend web components.",
+          skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML/CSS"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
+            {
+              name: "Student Management System",
+              description:
+                "Full-stack web app for managing student enrollment records, attendance logging, and report card exports.",
+              technologies: ["Java", "Spring Boot", "MySQL", "Tailwind"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Rahul Sharma",
+                photo:
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+                designation: "Lead Technical Architect",
+                organization: "Uncodemy",
+                linkedin: "https://linkedin.com",
+              },
             },
             {
-                id: "std-103",
-                name: "Aarav Patel",
-                photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
-                title: "Python Data Science Student",
-                course: "Data Science & ML",
-                institute: "Uncodemy Campus",
-                about: "Specialized in data analytics, machine learning predictive models, and web backend scripting with Flask.",
-                skills: ["Python", "Flask", "Pandas", "SQL", "Scikit-Learn"],
-                github: "https://github.com",
+              name: "Order Processing Service",
+              description:
+                "Microservice API performing checkout validations and database transactions.",
+              technologies: ["Java", "Spring", "PostgreSQL"],
+              github: "https://github.com",
+              liveDemo: "",
+              mentor: {
+                name: "Dr. Ananya Verma",
+                photo:
+                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+                designation: "Senior Java Instructor",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Housing Price Valuation ML",
-                        description: "Predictive model calculating estimated real estate valuations based on regional data points.",
-                        technologies: ["Python", "Flask", "Scikit-Learn"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Dr. Ananya Verma",
-                            photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-                            designation: "Senior Java Instructor",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-101",
-                name: "Prasang Singh",
-                photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-                title: "Java Full Stack Developer",
-                course: "Java Full Stack Diploma",
-                institute: "Uncodemy Institute",
-                about: "Focused on building scalable Java microservices, REST APIs, and clean frontend web components.",
-                skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML/CSS"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Student Management System",
-                        description: "Full-stack web app for managing student enrollment records, attendance logging, and report card exports.",
-                        technologies: ["Java", "Spring Boot", "MySQL", "Tailwind"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Rahul Sharma",
-                            photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-                            designation: "Lead Technical Architect",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    },
-                    {
-                        name: "Order Processing Service",
-                        description: "Microservice API performing checkout validations and database transactions.",
-                        technologies: ["Java", "Spring", "PostgreSQL"],
-                        github: "https://github.com",
-                        liveDemo: "",
-                        mentor: {
-                            name: "Dr. Ananya Verma",
-                            photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-                            designation: "Senior Java Instructor",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
-             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
-                linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
-            },
-             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
-                linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
-            },
-             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
-                linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
-            },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
             {
-                id: "std-102",
-                name: "Ananya Roy",
-                photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
-                title: "Frontend & UI Trainee",
-                course: "Web Development Master",
-                institute: "Uncodemy Academy",
-                about: "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
-                skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
-                github: "https://github.com",
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
                 linkedin: "https://linkedin.com",
-                projects: [
-                    {
-                        name: "Team Velocity Dashboard",
-                        description: "Real-time interactive dashboard rendering sprint analytics and task distributions.",
-                        technologies: ["React", "Chart.js", "Tailwind CSS"],
-                        github: "https://github.com",
-                        liveDemo: "https://example.com",
-                        mentor: {
-                            name: "Vikram Malhotra",
-                            photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-                            designation: "Frontend Specialist",
-                            organization: "Uncodemy",
-                            linkedin: "https://linkedin.com"
-                        }
-                    }
-                ]
+              },
             },
-            
-        ];
-        console.log(STUDENT_DATA.length);
-        
-        /* Initialize Page Elements */
-        document.addEventListener('DOMContentLoaded', () => {
-            populateFilterOptions();
-            renderCards(STUDENT_DATA);
-            setupFilterListeners();
-        });
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
+            {
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
+                linkedin: "https://linkedin.com",
+              },
+            },
+          ],
+        },
+        {
+          id: "std-102",
+          name: "Ananya Roy",
+          photo:
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80",
+          title: "Frontend & UI Trainee",
+          course: "Web Development Master",
+          institute: "Uncodemy Academy",
+          about:
+            "Passionate about creating modern, accessible UI interfaces and high-performance interactive web pages.",
+          skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+          github: "https://github.com",
+          linkedin: "https://linkedin.com",
+          projects: [
+            {
+              name: "Team Velocity Dashboard",
+              description:
+                "Real-time interactive dashboard rendering sprint analytics and task distributions.",
+              technologies: ["React", "Chart.js", "Tailwind CSS"],
+              github: "https://github.com",
+              liveDemo: "https://example.com",
+              mentor: {
+                name: "Vikram Malhotra",
+                photo:
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+                designation: "Frontend Specialist",
+                organization: "Uncodemy",
+                linkedin: "https://linkedin.com",
+              },
+            },
+          ],
+        },
+      ];
+      console.log(STUDENT_DATA.length);
 
-        /* Manual Scroll Control for Arrow Buttons */
-        function scrollCarousel(distance) {
-            const container = document.getElementById('students-carousel-wrapper');
-            if (container) {
-                container.scrollBy({ left: distance, behavior: 'smooth' });
-            }
+      /* Initialize Page Elements */
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCards(STUDENT_DATA);
+      });
+
+      /* Manual Scroll Control for Arrow Buttons (kept for completeness) */
+      function scrollCarousel(distance) {
+        const container = document.getElementById("students-carousel-wrapper");
+        if (container) {
+          container.scrollBy({ left: distance, behavior: "smooth" });
+        }
+      }
+
+      /* Render Compact Cards inside Auto-Scrolling Track */
+      function renderCards(list) {
+        const track = document.getElementById("students-carousel-track");
+        const emptyView = document.getElementById("no-students-view");
+
+        emptyView.classList.toggle("hidden", list.length > 0);
+
+        if (list.length === 0) {
+          track.innerHTML = "";
+          return;
         }
 
-        /* Populate Dynamic Filters */
-        function populateFilterOptions() {
-            const courses = new Set();
-            const techStack = new Set();
-            const mentors = new Set();
+        // Repeat list items to enable continuous infinite horizontal scroll ticker
+        const renderList = list.length < 5 ? [...list, ...list] : list;
 
-            STUDENT_DATA.forEach(s => {
-                if (s.course) courses.add(s.course);
-                if (s.skills) s.skills.forEach(sk => techStack.add(sk));
-                if (s.projects) {
-                    s.projects.forEach(p => {
-                        if (p.technologies) p.technologies.forEach(t => techStack.add(t));
-                        if (p.mentor && p.mentor.name) mentors.add(p.mentor.name);
-                    });
-                }
-            });
-
-            const courseSel = document.getElementById('filter-course');
-            const techSel = document.getElementById('filter-tech');
-            const mentorSel = document.getElementById('filter-mentor');
-
-            courses.forEach(c => courseSel.innerHTML += `<option value="${c}">${c}</option>`);
-            techStack.forEach(t => techSel.innerHTML += `<option value="${t}">${t}</option>`);
-            mentors.forEach(m => mentorSel.innerHTML += `<option value="${m}">${m}</option>`);
-        }
-
-        /* Render Compact Cards inside Auto-Scrolling Track */
-        function renderCards(list) {
-            const track = document.getElementById('students-carousel-track');
-            const countEl = document.getElementById('results-count');
-            const emptyView = document.getElementById('no-students-view');
-
-            countEl.textContent = list.length;
-            emptyView.classList.toggle('hidden', list.length > 0);
-
-            if (list.length === 0) {
-                track.innerHTML = '';
-                return;
-            }
-
-            // Repeat list items to enable continuous infinite horizontal scroll ticker
-            const renderList = list.length < 5 ? [...list, ...list] : list;
-
-            track.innerHTML = renderList.map(student => {
-
-                // Skills badging
-                const skillsHtml = student.skills && student.skills.length > 0 ? `
+        track.innerHTML = renderList
+          .map((student) => {
+            // Skills badging
+            const skillsHtml =
+              student.skills && student.skills.length > 0
+                ? `
                     <div class="flex flex-wrap gap-1">
-                        ${student.skills.map(sk => `<span class="px-2 py-0.5 rounded bg-orange-100 text-orange-700 text-[10px] font-bold">${sk}</span>`).join('')}
+                        ${student.skills.map((sk) => `<span class="px-2 py-0.5 rounded bg-orange-100 text-orange-700 text-[10px] font-bold">${sk}</span>`).join("")}
                     </div>
-                ` : '';
+                `
+                : "";
 
-                // Compact Project cards inside Student card
-                const projectsCount = student.projects ? student.projects.length : 0;
-                let projectsHtml = '';
+            // Compact Project cards inside Student card
+            const projectsCount = student.projects
+              ? student.projects.length
+              : 0;
+            let projectsHtml = "";
 
-                if (projectsCount > 0) {
-                    projectsHtml = `
+            if (projectsCount > 0) {
+              projectsHtml = `
                         <div class="space-y-2 pt-2 border-t border-orange-100">
                             <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Projects (${projectsCount})</span>
                             <div class="space-y-2">
-                                ${student.projects.map(proj => `
+                                ${student.projects
+                                  .map(
+                                    (proj) => `
                                     <div class="p-2.5 rounded-xl bg-orange-50/60 border border-orange-200/80 space-y-1.5">
                                         <div class="flex items-center justify-between gap-1">
                                             <h4 class="font-bold text-xs text-slate-900 truncate">${proj.name}</h4>
                                             <div class="flex items-center gap-1.5 shrink-0 text-xs">
-                                                ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-slate-500 hover:text-orange-600" title="Code"><i class="fab fa-github"></i></a>` : ''}
-                                                ${proj.liveDemo ? `<a href="${proj.liveDemo}" target="_blank" class="text-orange-600 hover:text-orange-700" title="Demo"><i class="fas fa-external-link-alt text-[10px]"></i></a>` : ''}
+                                                ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-slate-500 hover:text-orange-600" title="Code"><i class="fab fa-github"></i></a>` : ""}
+                                                ${proj.liveDemo ? `<a href="${proj.liveDemo}" target="_blank" class="text-orange-600 hover:text-orange-700" title="Demo"><i class="fas fa-external-link-alt text-[10px]"></i></a>` : ""}
                                             </div>
                                         </div>
-                                        ${proj.description ? `<p class="text-[11px] text-slate-600 line-clamp-2 leading-tight">${proj.description}</p>` : ''}
+                                        ${proj.description ? `<p class="text-[11px] text-slate-600 line-clamp-2 leading-tight">${proj.description}</p>` : ""}
                                         
-                                        ${proj.mentor && proj.mentor.name ? `
+                                        ${
+                                          proj.mentor && proj.mentor.name
+                                            ? `
                                             <div class="p-1.5 rounded-lg bg-white border border-orange-200 flex items-center gap-1.5 mt-1">
                                                 ${proj.mentor.photo ? `<img src="${proj.mentor.photo}" class="w-5 h-5 rounded-md object-cover shrink-0">` : `<div class="w-5 h-5 rounded-md orange-gradient-btn text-white text-[9px] font-bold flex items-center justify-center shrink-0">${proj.mentor.name.charAt(0)}</div>`}
                                                 <div class="min-w-0 text-left">
@@ -795,32 +843,40 @@
                                                     <span class="text-[10px] font-bold text-slate-800 truncate block leading-none">${proj.mentor.name}</span>
                                                 </div>
                                             </div>
-                                        ` : ''}
+                                        `
+                                            : ""
+                                        }
                                     </div>
-                                `).join('')}
+                                `,
+                                  )
+                                  .join("")}
                             </div>
                         </div>
                     `;
-                }
+            }
 
-                // Single Compact Card HTML Layout (Width: 340px)
-                return `
+            // Single Compact Card HTML Layout (Width: 340px)
+            return `
                     <div class="bg-white w-[320px] sm:w-[340px] rounded-2xl border border-orange-200 compact-shadow p-4 flex flex-col justify-between hover:border-orange-500 hover:shadow-lg transition duration-200 shrink-0 space-y-3">
                         
                         <div class="space-y-3">
                             <!-- Student Compact Profile Header -->
                             <div class="flex items-center gap-3 border-b border-orange-100 pb-2.5">
-                                ${student.photo ? `
+                                ${
+                                  student.photo
+                                    ? `
                                     <img src="${student.photo}" alt="${student.name}" class="w-14 h-14 rounded-xl object-cover ring-2 ring-orange-400/30 shrink-0">
-                                ` : `
+                                `
+                                    : `
                                     <div class="w-14 h-14 rounded-xl orange-gradient-btn text-white font-black text-xl flex items-center justify-center shrink-0">
-                                        ${student.name ? student.name.charAt(0) : 'S'}
+                                        ${student.name ? student.name.charAt(0) : "S"}
                                     </div>
-                                `}
+                                `
+                                }
                                 <div class="min-w-0">
                                     <h3 class="font-extrabold text-sm text-slate-900 truncate">${student.name}</h3>
-                                    ${student.title ? `<p class="text-[11px] font-bold text-orange-600 truncate">${student.title}</p>` : ''}
-                                    ${student.course ? `<p class="text-[10px] text-slate-500 truncate"><i class="fas fa-graduation-cap text-orange-500 mr-1"></i>${student.course}</p>` : ''}
+                                    ${student.title ? `<p class="text-[11px] font-bold text-orange-600 truncate">${student.title}</p>` : ""}
+                                    ${student.course ? `<p class="text-[10px] text-slate-500 truncate"><i class="fas fa-graduation-cap text-orange-500 mr-1"></i>${student.course}</p>` : ""}
                                 </div>
                             </div>
 
@@ -834,8 +890,8 @@
                         <!-- Card Footer Links -->
                         <div class="pt-2 border-t border-orange-100 flex items-center justify-between gap-1">
                             <div class="flex items-center gap-1.5">
-                                ${student.github ? `<a href="${student.github}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-slate-700 hover:bg-slate-900 hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-github"></i></a>` : ''}
-                                ${student.linkedin ? `<a href="${student.linkedin}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-orange-600 hover:bg-[#0A66C2] hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-linkedin"></i></a>` : ''}
+                                ${student.github ? `<a href="${student.github}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-slate-700 hover:bg-slate-900 hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-github"></i></a>` : ""}
+                                ${student.linkedin ? `<a href="${student.linkedin}" target="_blank" class="w-7 h-7 rounded-lg bg-orange-50 text-orange-600 hover:bg-[#0A66C2] hover:text-white flex items-center justify-center text-xs transition"><i class="fab fa-linkedin"></i></a>` : ""}
                             </div>
                             <button onclick="openStudentModal('${student.id}')" class="px-3 py-1.5 rounded-xl orange-gradient-btn text-white text-[11px] font-bold transition shadow hover:opacity-95">
                                 View Full Details
@@ -843,147 +899,112 @@
                         </div>
                     </div>
                 `;
-            }).join('');
-        }
+          })
+          .join("");
+      }
 
-        /* Modal Detail Popup */
-        function openStudentModal(studentId) {
-            const student = STUDENT_DATA.find(s => s.id === studentId);
-            if (!student) return;
+      /* Modal Detail Popup */
+      function openStudentModal(studentId) {
+        const student = STUDENT_DATA.find((s) => s.id === studentId);
+        if (!student) return;
 
-            const modalBody = document.getElementById('modal-body-content');
+        const modalBody = document.getElementById("modal-body-content");
 
-            modalBody.innerHTML = `
+        modalBody.innerHTML = `
                 <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-orange-50/50 p-4 rounded-xl border border-orange-100 text-center sm:text-left">
                     ${student.photo ? `<img src="${student.photo}" class="w-20 h-20 rounded-xl object-cover ring-2 ring-orange-500/30 shrink-0">` : `<div class="w-20 h-20 rounded-xl orange-gradient-btn text-white font-black text-2xl flex items-center justify-center shrink-0">${student.name.charAt(0)}</div>`}
                     <div class="space-y-1 flex-1">
                         <h2 class="text-lg font-extrabold text-slate-900">${student.name}</h2>
-                        ${student.title ? `<p class="text-xs font-bold text-orange-600">${student.title}</p>` : ''}
-                        ${student.course ? `<p class="text-xs text-slate-600"><i class="fas fa-graduation-cap text-orange-500 mr-1"></i>${student.course} - ${student.institute || ''}</p>` : ''}
+                        ${student.title ? `<p class="text-xs font-bold text-orange-600">${student.title}</p>` : ""}
+                        ${student.course ? `<p class="text-xs text-slate-600"><i class="fas fa-graduation-cap text-orange-500 mr-1"></i>${student.course} - ${student.institute || ""}</p>` : ""}
                         
                         <div class="flex items-center justify-center sm:justify-start gap-2 pt-2">
-                            ${student.github ? `<a href="${student.github}" target="_blank" class="px-3 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold flex items-center gap-1"><i class="fab fa-github"></i> GitHub</a>` : ''}
-                            ${student.linkedin ? `<a href="${student.linkedin}" target="_blank" class="px-3 py-1 rounded-lg orange-gradient-btn text-white text-xs font-bold flex items-center gap-1"><i class="fab fa-linkedin"></i> LinkedIn</a>` : ''}
+                            ${student.github ? `<a href="${student.github}" target="_blank" class="px-3 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold flex items-center gap-1"><i class="fab fa-github"></i> GitHub</a>` : ""}
+                            ${student.linkedin ? `<a href="${student.linkedin}" target="_blank" class="px-3 py-1 rounded-lg orange-gradient-btn text-white text-xs font-bold flex items-center gap-1"><i class="fab fa-linkedin"></i> LinkedIn</a>` : ""}
                         </div>
                     </div>
                 </div>
 
-                ${student.about ? `
+                ${
+                  student.about
+                    ? `
                     <div>
                         <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">About Student</h4>
                         <p class="text-xs text-slate-600 leading-relaxed bg-white p-3 rounded-xl border border-orange-100">${student.about}</p>
                     </div>
-                ` : ''}
+                `
+                    : ""
+                }
 
-                ${student.skills && student.skills.length > 0 ? `
+                ${
+                  student.skills && student.skills.length > 0
+                    ? `
                     <div>
                         <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">Technical Skills</h4>
                         <div class="flex flex-wrap gap-1">
-                            ${student.skills.map(sk => `<span class="px-2.5 py-0.5 rounded-md bg-orange-100 text-orange-700 text-xs font-bold">${sk}</span>`).join('')}
+                            ${student.skills.map((sk) => `<span class="px-2.5 py-0.5 rounded-md bg-orange-100 text-orange-700 text-xs font-bold">${sk}</span>`).join("")}
                         </div>
                     </div>
-                ` : ''}
+                `
+                    : ""
+                }
 
-                ${student.projects && student.projects.length > 0 ? `
+                ${
+                  student.projects && student.projects.length > 0
+                    ? `
                     <div class="space-y-3 pt-2">
                         <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-wider">Completed Projects & Mentors</h4>
                         <div class="space-y-3">
-                            ${student.projects.map(p => `
+                            ${student.projects
+                              .map(
+                                (p) => `
                                 <div class="p-3.5 rounded-xl bg-white border border-orange-200 space-y-2 compact-shadow">
                                     <div class="flex items-center justify-between gap-2">
                                         <h5 class="font-extrabold text-xs text-slate-900">${p.name}</h5>
                                         <div class="flex items-center gap-1.5">
-                                            ${p.github ? `<a href="${p.github}" target="_blank" class="px-2 py-0.5 rounded bg-slate-900 text-white text-[10px] font-bold"><i class="fab fa-github"></i> Code</a>` : ''}
-                                            ${p.liveDemo ? `<a href="${p.liveDemo}" target="_blank" class="px-2 py-0.5 rounded orange-gradient-btn text-white text-[10px] font-bold"><i class="fas fa-external-link-alt"></i> Live</a>` : ''}
+                                            ${p.github ? `<a href="${p.github}" target="_blank" class="px-2 py-0.5 rounded bg-slate-900 text-white text-[10px] font-bold"><i class="fab fa-github"></i> Code</a>` : ""}
+                                            ${p.liveDemo ? `<a href="${p.liveDemo}" target="_blank" class="px-2 py-0.5 rounded orange-gradient-btn text-white text-[10px] font-bold"><i class="fas fa-external-link-alt"></i> Live</a>` : ""}
                                         </div>
                                     </div>
-                                    ${p.description ? `<p class="text-xs text-slate-600">${p.description}</p>` : ''}
-                                    ${p.mentor ? `
+                                    ${p.description ? `<p class="text-xs text-slate-600">${p.description}</p>` : ""}
+                                    ${
+                                      p.mentor
+                                        ? `
                                         <div class="p-2 rounded-lg bg-orange-50/70 border border-orange-200 flex items-center justify-between text-xs mt-1">
                                             <div class="flex items-center gap-2">
                                                 ${p.mentor.photo ? `<img src="${p.mentor.photo}" class="w-6 h-6 rounded object-cover">` : `<div class="w-6 h-6 rounded orange-gradient-btn text-white text-[10px] font-bold flex items-center justify-center">${p.mentor.name.charAt(0)}</div>`}
                                                 <div>
                                                     <span class="text-[8px] font-black text-orange-600 uppercase block leading-none">Assigned Mentor</span>
                                                     <span class="font-bold text-slate-900 text-xs">${p.mentor.name}</span>
-                                                    ${p.mentor.designation ? `<span class="text-[10px] text-slate-500 block leading-none">${p.mentor.designation}</span>` : ''}
+                                                    ${p.mentor.designation ? `<span class="text-[10px] text-slate-500 block leading-none">${p.mentor.designation}</span>` : ""}
                                                 </div>
                                             </div>
                                         </div>
-                                    ` : ''}
+                                    `
+                                        : ""
+                                    }
                                 </div>
-                            `).join('')}
+                            `,
+                              )
+                              .join("")}
                         </div>
                     </div>
-                ` : ''}
+                `
+                    : ""
+                }
             `;
 
-            document.getElementById('student-modal').classList.remove('hidden');
-        }
+        document.getElementById("student-modal").classList.remove("hidden");
+      }
 
-        function closeStudentModal() {
-            document.getElementById('student-modal').classList.add('hidden');
-        }
+      function closeStudentModal() {
+        document.getElementById("student-modal").classList.add("hidden");
+      }
 
-        /* Filter Setup */
-        function setupFilterListeners() {
-            const searchInput = document.getElementById('search-input');
-            const clearBtn = document.getElementById('clear-search-btn');
-            const courseSel = document.getElementById('filter-course');
-            const techSel = document.getElementById('filter-tech');
-            const mentorSel = document.getElementById('filter-mentor');
-
-            function applyFilters() {
-                const query = searchInput.value.toLowerCase().trim();
-                const courseVal = courseSel.value;
-                const techVal = techSel.value;
-                const mentorVal = mentorSel.value;
-
-                clearBtn.classList.toggle('hidden', query.length === 0);
-
-                const filtered = STUDENT_DATA.filter(student => {
-                    let matchesSearch = !query ||
-                        (student.name || '').toLowerCase().includes(query) ||
-                        (student.course || '').toLowerCase().includes(query) ||
-                        (student.skills || []).join(' ').toLowerCase().includes(query) ||
-                        (student.projects && student.projects.some(p =>
-                            (p.name || '').toLowerCase().includes(query) ||
-                            (p.technologies || []).join(' ').toLowerCase().includes(query) ||
-                            (p.mentor && (p.mentor.name || '').toLowerCase().includes(query))
-                        ));
-
-                    let matchesCourse = courseVal === 'ALL' || student.course === courseVal;
-                    let matchesTech = techVal === 'ALL' ||
-                        (student.skills && student.skills.includes(techVal)) ||
-                        (student.projects && student.projects.some(p => p.technologies && p.technologies.includes(techVal)));
-                    let matchesMentor = mentorVal === 'ALL' ||
-                        (student.projects && student.projects.some(p => p.mentor && p.mentor.name === mentorVal));
-
-                    return matchesSearch && matchesCourse && matchesTech && matchesMentor;
-                });
-
-                renderCards(filtered);
-            }
-
-            searchInput.addEventListener('input', applyFilters);
-            courseSel.addEventListener('change', applyFilters);
-            techSel.addEventListener('change', applyFilters);
-            mentorSel.addEventListener('change', applyFilters);
-
-            clearBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                applyFilters();
-            });
-        }
-
-        function resetFilters() {
-            document.getElementById('search-input').value = '';
-            document.getElementById('filter-course').value = 'ALL';
-            document.getElementById('filter-tech').value = 'ALL';
-            document.getElementById('filter-mentor').value = 'ALL';
-            document.getElementById('clear-search-btn').classList.add('hidden');
-            renderCards(STUDENT_DATA);
-        }
+      /* resetFilters keeps working – it just re-renders all data; no filter elements needed */
+      function resetFilters() {
+        renderCards(STUDENT_DATA);
+      }
     </script>
-</body>
-
+  </body>
 </html>
