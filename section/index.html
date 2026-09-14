@@ -111,78 +111,29 @@
 <body
     class="bg-white text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-orange-500 selection:text-white">
 
-    <!-- TOP HEADER -->
-    <header class="pt-8 pb-4 text-center px-4 max-w-7xl mx-auto w-full">
-        <div
-            class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 text-orange-600 text-[11px] font-black uppercase tracking-wider mb-2 border border-orange-200/60">
-            <i class="fas fa-certificate text-orange-500"></i> Official Trainee Showcase
-        </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-            Uncodemy <span class="text-orange-600">Project Showcase</span>
-        </h1>
-        <p class="mt-1.5 text-xs sm:text-sm font-medium text-slate-500 max-w-xl mx-auto">
-            Explore our students' technical profiles, real-world full-stack projects, and assigned project mentors in a
-            continuous showcase.
-        </p>
-    </header>
-
     <!-- SEARCH, FILTERS & CAROUSEL NAVIGATION CONTROLS -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 w-full">
-        <div class="bg-white p-4 rounded-2xl border border-orange-200 compact-shadow space-y-3">
-
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-                <!-- Search Input Box -->
-                <div class="relative w-full">
-                    <div
-                        class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-orange-500 text-sm">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <input type="text" id="search-input"
-                        placeholder="Search by student, tech skill, project title, course, or mentor..."
-                        class="w-full pl-10 pr-9 py-2 bg-orange-50/40 border border-orange-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white text-xs sm:text-sm font-medium transition">
-                    <button id="clear-search-btn"
-                        class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-orange-600">
-                        <i class="fas fa-times-circle text-sm"></i>
-                    </button>
-                </div>
-
-                <!-- Carousel Manual Navigation Buttons -->
-                <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
-                    <span
-                        class="text-[11px] font-bold text-slate-400 uppercase tracking-wider hidden md:inline">Scroll:</span>
-                    <button onclick="scrollCarousel(-360)" title="Scroll Left"
-                        class="w-9 h-9 rounded-xl bg-orange-50 text-orange-600 border border-orange-200 hover:bg-orange-600 hover:text-white hover:border-orange-600 active:scale-95 transition flex items-center justify-center font-bold">
-                        <i class="fas fa-chevron-left text-xs"></i>
-                    </button>
-                    <button onclick="scrollCarousel(360)" title="Scroll Right"
-                        class="w-9 h-9 rounded-xl bg-orange-50 text-orange-600 border border-orange-200 hover:bg-orange-600 hover:text-white hover:border-orange-600 active:scale-95 transition flex items-center justify-center font-bold">
-                        <i class="fas fa-chevron-right text-xs"></i>
-                    </button>
-                </div>
+        <!-- Dynamic Filter Dropdowns -->
+        <div class="grid grid-cols-3 gap-2 pt-1 border-t border-orange-100">
+            <div>
+                <select id="filter-course"
+                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
+                    <option value="ALL">All Courses</option>
+                </select>
             </div>
 
-            <!-- Dynamic Filter Dropdowns -->
-            <div class="grid grid-cols-3 gap-2 pt-1 border-t border-orange-100">
-                <div>
-                    <select id="filter-course"
-                        class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                        <option value="ALL">All Courses</option>
-                    </select>
-                </div>
+            <div>
+                <select id="filter-tech"
+                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
+                    <option value="ALL">All Technologies</option>
+                </select>
+            </div>
 
-                <div>
-                    <select id="filter-tech"
-                        class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                        <option value="ALL">All Technologies</option>
-                    </select>
-                </div>
-
-                <div>
-                    <select id="filter-mentor"
-                        class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
-                        <option value="ALL">All Mentors</option>
-                    </select>
-                </div>
+            <div>
+                <select id="filter-mentor"
+                    class="w-full px-2.5 py-1.5 bg-orange-50/40 border border-orange-200 rounded-lg text-[11px] sm:text-xs text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-orange-500 truncate">
+                    <option value="ALL">All Mentors</option>
+                </select>
             </div>
         </div>
     </section>
