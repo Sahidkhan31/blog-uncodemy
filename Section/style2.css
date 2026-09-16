@@ -1,0 +1,489 @@
+
+/* =========================
+   PROJECT CARD — DESIGN 1.1
+   ========================= */
+
+.project-card {
+    width: 100%;
+    max-width: 370px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.055);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================
+   TOP
+   ========================= */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px 19px 14px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #3d3d3d;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.brand-icon {
+  width: 30px;
+  height: 34px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+
+.project-category {
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #fff0ea;
+    color: #e95732;
+    border: 1px solid #ffd3c5;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    box-shadow: 0 2px 6px rgba(240, 100, 60, 0.08);
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.project-main {
+    padding: 17px 19px 3px;
+}
+
+.project-title {
+    margin: 0 0 9px;
+
+    color: #202020;
+
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.project-description {
+    margin: 0;
+
+    color: #6f6f6f;
+
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TAGS
+   ========================= */
+
+.project-tags {
+    overflow: hidden;
+    padding: 15px 24px 3px;
+}
+
+.tags-track {
+    display: flex;
+    gap: 6px;
+    width: max-content;
+    animation: tagsMove 14s linear infinite;
+}
+
+
+/* Individual Logo Card */
+
+.tech-tag {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 6px 10px;
+
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.045);
+
+    color: #444444;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.tech-tag img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* Hover */
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(240, 100, 60, 0.12);
+}
+
+
+/* Movement */
+
+@keyframes tagsMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+    }
+
+}
+
+
+/* Pause on hover */
+
+.project-tags:hover .tags-track {
+    animation-play-state: paused;
+}
+
+/* =========================
+   PEOPLE
+   ========================= */
+
+.project-people {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 19px 17px;
+}
+
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.person-image,
+.student-avatar {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.person-image {
+    object-fit: cover;
+    background: #eeeeee;
+}
+
+
+.student-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0643c;
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.person-name {
+    max-width: 125px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #333333;
+
+    font-size: 9.5px;
+    font-weight: 700;
+}
+
+
+.person-role {
+    margin-top: 2px;
+
+    color: #999999;
+
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+
+/* =========================
+   ACTIONS
+   ========================= */
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    padding: 13px 17px;
+    background: #f9f9f9;
+    border-top: 1px solid #eeeeee;
+}
+
+.project-btn {
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+/* Source Code */
+
+.source-code {
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+    color: #333333;
+}
+
+.source-code:hover {
+    background: #f4f4f4;
+    border-color: #bdbdbd;
+    transform: translateY(-1px);
+}
+
+/* Live Project View */
+
+.live-project {
+    background: #f0643c;
+    border: 1px solid #f0643c;
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(240, 100, 60, 0.15);
+}
+
+.live-project:hover {
+    background: #db5330;
+    border-color: #db5330;
+    box-shadow: 0 5px 12px rgba(240, 100, 60, 0.22);
+    transform: translateY(-1px);
+}
+
+.btn-icon {
+    font-size: 11px;
+    line-height: 1;
+}
+
+.title-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 13px;
+}
+
+.title-line span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right,
+            #f0643c 0,
+            #f0643c 55px,
+            #e5e5e5 55px,
+            #e5e5e5 100%);
+}
+
+/* =========================
+   PROJECTS HORIZONTAL CAROUSEL
+   ========================= */
+
+.projects-carousel {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+
+/* Moving Row */
+
+.projects-track {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+
+    width: max-content;
+
+    animation: projectsMove 40s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* Every Card */
+
+.projects-track .project-card {
+    flex: 0 0 370px;
+}
+
+
+/* Horizontal Movement */
+
+@keyframes projectsMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* Pause when mouse is over carousel */
+
+.projects-carousel:hover .projects-track {
+    animation-play-state: paused;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .projects-carousel {
+        padding: 15px 0;
+    }
+
+    .projects-track {
+        gap: 14px;
+        animation-duration: 22s;
+    }
+
+    .projects-track .project-card {
+        flex: 0 0 calc(100vw - 30px);
+        max-width: 370px;
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+
+    .projects-track {
+        gap: 12px;
+    }
+
+    .projects-track .project-card {
+        flex-basis: calc(100vw - 24px);
+    }
+
+}
+
+.description-box {
+    position: relative;
+}
+
+.project-description {
+    margin: 0;
+
+    height: 80px;
+    overflow: hidden;
+
+    color: #6f6f6f;
+    font-size: 12.5px;
+    line-height: 1.6;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Read More Button */
+
+.description-more {
+    display: none;
+
+    margin-top: 5px;
+
+    border: none;
+    background: none;
+
+    color: #f0643c;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* When opened */
+
+.description-box.expanded .project-description {
+    overflow-y: auto;
+}
+
+/* Small scrollbar */
+
+.description-box.expanded .project-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.description-box.expanded .project-description::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+    border-radius: 10px;
+}
